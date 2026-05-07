@@ -2,14 +2,14 @@
 
 import React, { useMemo, useState, useEffect, useCallback } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowLeft, ArrowRight, Play } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
 import { getHeroSection } from "@/sanity/lib/getHeroSection";
 import { urlFor } from "@/sanity/lib/image";
 import { Link } from "@/navigation";
 
-const fallbackImages = ["/hero-1.webp", "/hero-2.webp", "/hero-3.webp"];
+const fallbackImages = ["/hero1.jpg", "/hero2.jpg", "/hero3.jpg"];  
 
 const renderHighlight = (value?: string) => {
   if (!value) return null;
@@ -60,6 +60,7 @@ const Hero = ({ locale }: { locale: string }) => {
   const t = useTranslations("Hero");
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  
   const { data } = useQuery({
     queryKey: ["heroSection", locale],
     queryFn: () => getHeroSection(locale),
@@ -76,15 +77,17 @@ const Hero = ({ locale }: { locale: string }) => {
     if (!rawSlides?.length) {
       return fallbackImages.map((image) => ({
         image,
-        subtitle: "",
+        subtitle: "GIVING BACK",
         title: null,
         link: "/donate",
+        buttonLabel: undefined,
+        text: undefined
       }));
     }
 
     return rawSlides.map((slide, index) => ({
       image: fallbackImages[index % fallbackImages.length],
-      subtitle: slide.subtitle ?? "",
+      subtitle: slide.subtitle ?? "GIVING BACK",
       title: renderHighlight(slide.title),
       text: undefined as string | undefined,
       link: "/donate",
@@ -92,24 +95,36 @@ const Hero = ({ locale }: { locale: string }) => {
     }));
   }, [t]);
 
+  // --- FIXED MAPPING LOGIC START ---
   const slides = useMemo(() => {
-    if (!data?.slides?.length) {
+    // Agar Sanity ka data nahi hai toh fallback dikhao
+    if (!data?.slides || data.slides.length === 0) {
       return fallbackSlides;
     }
 
-    return data.slides.map((slide, index) => ({
-      image: slide.image
-        ? urlFor(slide.image).width(2000).quality(80).url()
-        : fallbackImages[index % fallbackImages.length],
-      subtitle: slide.subtitle ?? fallbackSlides[index]?.subtitle ?? "",
-      title: slide.title
-        ? renderHighlight(slide.title)
-        : fallbackSlides[index]?.title,
-      text: slide.text || undefined,
-      link: slide.link || fallbackSlides[index]?.link || "/donate",
-      buttonLabel: slide.buttonLabel || undefined,
-    }));
+    return data.slides.map((slide: any, index: number) => {
+      const fallback = fallbackSlides[index % fallbackSlides.length];
+      
+      // Image Check: Agar Sanity ki image hai toh urlFor use karo warna fallback image
+      const slideImage = slide.image?.asset 
+        ? urlFor(slide.image).width(2000).quality(80).url() 
+        : fallback.image;
+
+      return {
+        image: slideImage,
+        // Schema ke mutabiq slogan field check karein
+        subtitle: slide.slogan || slide.subtitle || fallback.subtitle,
+        // Title highlighted render karein
+        title: slide.title ? renderHighlight(slide.title) : fallback.title,
+        // Schema ke mutabiq description field check karein
+        text: slide.description || slide.text || fallback.text,
+        // Schema ke mutabiq buttonLink field check karein
+        link: slide.buttonLink || slide.link || fallback.link,
+        buttonLabel: slide.buttonLabel || fallback.buttonLabel,
+      };
+    });
   }, [data?.slides, fallbackSlides]);
+  // --- FIXED MAPPING LOGIC END ---
 
   const paginate = useCallback(
     (newDirection: number) => {
@@ -124,6 +139,7 @@ const Hero = ({ locale }: { locale: string }) => {
 
   const nextSlide = useCallback(() => paginate(1), [paginate]);
   const prevSlide = useCallback(() => paginate(-1), [paginate]);
+
   useEffect(() => {
     if (!slides.length) return undefined;
     const timer = setInterval(nextSlide, 7000);
@@ -148,6 +164,8 @@ const Hero = ({ locale }: { locale: string }) => {
       opacity: 0,
     }),
   };
+
+  if (!slides[activeIndex]) return null;
 
   return (
     <section
@@ -178,14 +196,14 @@ const Hero = ({ locale }: { locale: string }) => {
         >
           <div className="absolute inset-0">
             <div
-              className="absolute inset-0 bg-cover bg-center grayscale"
+              className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage: `url('${slides[activeIndex].image}')`,
-                opacity: 0.2,
+                opacity: 0.4,
               }}
             />
             <div
-              className="absolute inset-0 bg-cover bg-no-repeat bg-center grayscale opacity-10 scale-100"
+              className="absolute inset-0 bg-cover bg-no-repeat bg-center opacity-5 scale-100"
               style={{
                 backgroundImage: "url('/hero-bottom-right.webp')",
               }}
@@ -207,7 +225,7 @@ const Hero = ({ locale }: { locale: string }) => {
                 className="flex items-center justify-center gap-5 mb-8"
               >
                 <div className="h-[2px] w-14 bg-primary rounded-full"></div>
-                <span className="text-primary  font-black tracking-[0.3em] text-sm md:text-md uppercase  leading-none">
+                <span className="text-primary font-black tracking-[0.3em] text-sm md:text-md uppercase leading-none">
                   {slides[activeIndex].subtitle}
                 </span>
                 <div className="h-[2px] w-14 bg-primary rounded-full"></div>
@@ -246,7 +264,7 @@ const Hero = ({ locale }: { locale: string }) => {
                   href={slides[activeIndex].link}
                   className="flex items-center gap-4 bg-white/5 border border-white/20 hover:border-primary pl-8 pr-3 py-2 rounded-full transition-all group relative overflow-hidden active:scale-95 hover:shadow-[0_10px_40px_rgba(249,75,28,0.2)] cursor-pointer"
                 >
-                  <span className="font-extrabold text-md text-white  relative z-10 transition-colors group-hover:text-white">
+                  <span className="font-extrabold text-md text-white relative z-10 transition-colors group-hover:text-white">
                     {slides[activeIndex].buttonLabel
                       ? slides[activeIndex].buttonLabel
                       : t.rich("donateNow", {
@@ -257,91 +275,65 @@ const Hero = ({ locale }: { locale: string }) => {
                   </span>
                   <div className="w-11 h-11 bg-primary rounded-full flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform">
                     {isRtl ? (
-                      <ArrowLeft
-                        size={22}
-                        className="text-white"
-                        strokeWidth={3}
-                      />
+                      <ArrowLeft size={22} className="text-white" strokeWidth={3} />
                     ) : (
-                      <ArrowRight
-                        size={22}
-                        className="text-white"
-                        strokeWidth={3}
-                      />
+                      <ArrowRight size={22} className="text-white" strokeWidth={3} />
                     )}
                   </div>
                   <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-10"></div>
                 </Link>
-
-                <button className="flex items-center gap-6 group hover:scale-105 transition-all cursor-pointer"></button>
               </motion.div>
             </motion.div>
           </div>
         </motion.div>
       </AnimatePresence>
 
+      {/* Decorative Splashes */}
       <AnimatePresence mode="wait">
         <motion.div
           key={`right-splash-${activeIndex}`}
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 0.1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="absolute -bottom-70 -right-20 w-[600px] xl:w-[560px] h-[600px] xl:h-[500px] z-10 hidden lg:block animate-dance"
         >
           <div
             className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: "url('/hero-bottom-right.webp')",
-            }}
+            style={{ backgroundImage: "url('/hero-bottom-right.webp')" }}
           />
         </motion.div>
       </AnimatePresence>
 
-      {/* Decorative Image - Bottom Left */}
       <AnimatePresence mode="wait">
         <motion.div
           key={`left-decor-${activeIndex}`}
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 0.2, y: 0 }}
+          animate={{ opacity: 0.1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="absolute -bottom-16 left-0 w-[900px] h-[250px] pointer-events-none hidden xl:block animate-dance-slow"
         >
           <div
             className="w-full h-full bg-contain bg-no-repeat bg-left"
-            style={{
-              backgroundImage: "url('/hero-bottom-left.png')",
-            }}
+            style={{ backgroundImage: "url('/hero-bottom-left.png')" }}
           />
         </motion.div>
       </AnimatePresence>
 
-      {/* Side Navigation Arrows */}
+      {/* Side Navigation */}
       <div className="absolute left-10 top-1/2 -translate-y-1/2 z-30 hidden lg:block">
-        <button
-          onClick={prevSlide}
-          className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:border-primary hover:scale-110 transition-all duration-300 backdrop-blur-sm group cursor-pointer"
-        >
-          <ArrowLeft
-            size={24}
-            className="group-hover:-translate-x-1 transition-transform"
-          />
+        <button onClick={prevSlide} className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300 backdrop-blur-sm group cursor-pointer">
+          <ArrowLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
         </button>
       </div>
       <div className="absolute right-10 top-1/2 -translate-y-1/2 z-30 hidden lg:block">
-        <button
-          onClick={nextSlide}
-          className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:border-primary hover:scale-110 transition-all duration-300 backdrop-blur-sm group cursor-pointer"
-        >
-          <ArrowRight
-            size={24}
-            className="group-hover:translate-x-1 transition-transform"
-          />
+        <button onClick={nextSlide} className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-300 backdrop-blur-sm group cursor-pointer">
+          <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
 
-      {/* Modern Pagination Dots */}
+      {/* Pagination Dots */}
       <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-4 z-30">
         {slides.map((_, index) => (
           <div

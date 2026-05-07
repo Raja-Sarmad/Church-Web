@@ -3,8 +3,8 @@
 @source "../components/**/*.{ts,tsx,js,jsx,mdx}";
 
 @theme {
-  --color-primary: #1cab2d;
-  --color-secondary: #092a24;
+  --color-primary: #cc0000;
+  --color-secondary: #ffd966;
   --font-nunito: var(--font-nunito);
   --font-figtree: var(--font-figtree);
   --font-caveat: var(--font-caveat);

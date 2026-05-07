@@ -24,7 +24,7 @@ npm run build
 
 - **Next.js 15** - React framework with App Router
 - **Sanity v3** - Headless CMS for content management
-- **next-intl** - Multi-language support (English, Turkish, Arabic with RTL)
+- **next-intl** - Multi-language support (English)
 - **React Query** - Data fetching and caching
 - **Tailwind CSS v4** - Styling
 - **Framer Motion** - Animations

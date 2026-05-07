@@ -9,7 +9,7 @@ import {
   ArrowRight,
   X,
 } from "lucide-react";
-import LanguageSwitcher from "./LanguageSwitcher";
+// import LanguageSwitcher from "./LanguageSwitcher";
 import { Link, usePathname } from "@/navigation";
 import Image from "next/image";
 
@@ -122,14 +122,14 @@ const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
       <div className="mx-auto flex items-center justify-between container ">
         <Link
           href="/"
-          className="flex bg-white rounded-full items-center gap-2 group cursor-pointer"
+          className="flex rounded-full items-center gap-2 group cursor-pointer"
         >
           <Image
-            src="/logo.png"
+            src="/logo3.jpeg"
             alt="logo"
             width={90}
             height={90}
-            className="h-12 w-12 md:h-12 md:w-12 2xl:h-[90px] 2xl:w-[90px] lg:h-[60px] lg:w-[60px]"
+            className="h-12 w-12 md:h-12 md:w-12 2xl:h-[90px] 2xl:w-[90px] lg:h-[60px] lg:w-[60px] rounded-full"
           />
         </Link>
 
@@ -244,7 +244,7 @@ const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
         <div className="flex items-center gap-4 lg:gap-6">
           {/* Call Section */}
 
-          <LanguageSwitcher className="hidden lg:block" />
+          {/* <LanguageSwitcher className="hidden lg:block" /> */}
 
           <button
             type="button"
@@ -282,14 +282,14 @@ const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
             <Link
               href="/"
               onClick={() => setIsMenuOpen(false)}
-              className="flex bg-white rounded-full items-center cursor-pointer"
+              className="flexrounded-full items-center cursor-pointer"
             >
               <Image
-                src="/logo.png"
+                src="/logo3.jpeg"
                 alt="logo"
                 width={50}
                 height={50}
-                className="h-10 w-10"
+                className="h-10 w-10 rounded-full"
               />
             </Link>
             <button

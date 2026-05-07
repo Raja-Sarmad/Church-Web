@@ -1,934 +1,519 @@
 {
   "Metadata": {
-    "title": "Bridges of Hope Association for Development and Rehabilitation",
-    "description": "A non-profit humanitarian organization registered in Turkey and Palestine, serving communities affected by disasters, wars, and poverty through education, healthcare, relief, and rehabilitation."
+    "title": "Bridges of Faith Community Church & Ministries",
+    "description": "A faith-based community dedicated to spreading the Gospel, providing pastoral care, and serving those in need through spiritual guidance, education, and compassion ministries."
   },
   "InitialPageLoader": {
-    "headline": "Restoring Dignity.",
-    "subheadline": "Rebuilding Hope.",
+    "headline": "Restoring Faith.",
+    "subheadline": "Rebuilding Lives in Christ.",
     "loading": "Loading"
   },
   "TopBar": {
-    "welcome": "Welcome to Bridges of Hope Association for Development and Rehabilitation",
-    "follow": "Follow Us On:",
-    "email": "info@umutkopruleri.org",
-    "address": "Adnan Menderes Bulvari Vatan Caddesi No:14 D:4 Faith"
+    "welcome": "Welcome to Bridges of Faith Community Church",
+    "follow": "Connect With Us:",
+    "email": "contact@bridgesoffaith.org",
+    "address": "Faith Cathedral, 14 Grace Avenue, City Center"
   },
   "Navbar": {
     "home": "Home",
-    "areaOfWork": "Area of Work",
-    "contributeProjects": "Campaigns",
-    "donate": "Donate",
-    "completedProjects": "Projects",
-    "storiesImpact": "Stories and Impact",
+    "areaOfWork": "Ministries",
+    "contributeProjects": "Mission Appeals",
+    "donate": "Giving",
+    "completedProjects": "Gospel Missions",
+    "storiesImpact": "Testimonies",
     "more": "More",
-    "about": "About",
-    "programs": "Programs",
-    "beneficiaries": "Beneficiaries",
-    "projects": "Projects",
-    "news": "News",
-    "contact": "Contact us",
-    "callAnytime": "Call Anytime",
-    "donateNow": "Donate Now"
+    "about": "About Us",
+    "programs": "Sermons",
+    "beneficiaries": "Community",
+    "projects": "Outreach",
+    "news": "Announcements",
+    "contact": "Contact Us",
+    "callAnytime": "Prayer Line",
+    "donateNow": "Give Now"
   },
   "FeaturedCauseCard": {
-    "raisedFund": "Fields of Work",
-    "raised": "Education",
-    "goal": "Healthcare",
-    "category": "Crisis Support",
-    "title": "Support for Disaster and Crisis Cases",
-    "description": "Education - Healthcare - Support for Disaster and Crisis Cases."
+    "raisedFund": "Ministry Focus",
+    "raised": "Christian Education",
+    "goal": "Healing & Prayer",
+    "category": "Compassion",
+    "title": "Support for Families in Need",
+    "description": "Providing spiritual guidance, healthcare support, and emergency relief to our community."
   },
   "MissionVision": {
     "mission": {
-      "title": "Mission",
-      "text": "We are committed to serving humanity everywhere, without any racial, religious, or ideological discrimination, through education, healthcare services, and social inclusion, in a way that strengthens human dignity and achieves sustainable development."
+      "title": "Our Mission",
+      "text": "We are committed to serving God and humanity by spreading the love of Christ, fostering spiritual growth, and providing social support to strengthen human dignity and achieve a balanced, purposeful life."
     },
     "objectives": {
       "title": "",
       "prefix": "",
-      "highlight": "Objectives",
+      "highlight": "Our Purpose",
       "items": [
-        "To create an appropriate environment for people with disabilities through educational, rehabilitative, healthcare, and social programs, projects, and approved technologies.",
-        "To support marginalized and most vulnerable groups and integrate them into society.",
-        "To build strategic partnerships with local and international organizations to achieve sustainable development."
+        "To provide a nurturing environment for spiritual growth through worship, counseling, and biblical education.",
+        "To support the marginalized, the elderly, and the vulnerable through dedicated compassion ministries.",
+        "To build strategic partnerships with global missions to spread hope and provide relief to crisis-stricken areas."
       ],
-      "donateNow": "Donate Now"
+      "donateNow": "Give an Offering"
     },
     "vision": {
-      "title": "Vision",
-      "text": "To become a solid bridge of hope and a globally leading institution in relief work, development, and rehabilitation, through innovative initiatives and effective partnerships that contribute to building a cohesive society based on justice, health, and knowledge."
+      "title": "Our Vision",
+      "text": "To be a leading spiritual home and a global light of hope, transforming lives through the Gospel and innovative community initiatives that promote justice, health, and faith."
     },
     "targetGroups": {
-      "title": "Target Groups",
+      "title": "Who We Serve",
       "items": [
-        "Patients and people with physical or intellectual disabilities.",
-        "Individuals affected by wars, disasters, and famines.",
-        "Underprivileged families and those who have lost their primary provider."
+        "Individuals seeking spiritual healing and emotional restoration.",
+        "Families struggling with poverty, displacement, or loss.",
+        "Children and youth in need of guidance and moral education."
       ]
     }
   },
   "Team": {
-    "subtitle": "Our Volunteer",
-    "title": "Meet the Dedicated Volunteer",
-    "highlight": "Volunteer",
+    "subtitle": "Our Servants",
+    "title": "Meet Our Ministry Leadership",
+    "highlight": "Leadership",
     "roles": {
-      "founder": "Founder",
-      "manager": "Manager",
-      "volunteer": "Volunteer"
+      "founder": "Senior Pastor",
+      "manager": "Ministry Coordinator",
+      "volunteer": "Deacon/Volunteer"
     }
   },
   "Hero": {
     "slides": [
       {
-        "subtitle": "Bridges of Hope Association",
-        "title": "Association for <highlight>Development</highlight> and Rehabilitation"
+        "subtitle": "Bridges of Faith Church",
+        "title": "A Place for <highlight>Worship</highlight> and Restoration"
       },
       {
         "subtitle": "Our Slogan",
-        "title": "With humanity everywhere… <highlight>dignity</highlight> rebuilt."
+        "title": "With Christ everywhere… <highlight>dignity</highlight> is rebuilt."
       },
       {
-        "subtitle": "Fields of Work",
-        "title": "Education, Healthcare, and <highlight>Crisis Support</highlight>."
+        "subtitle": "Our Ministry",
+        "title": "Faith, Compassion, and <highlight>Spiritual Support</highlight>."
       }
     ],
-    "donateNow": "Donate Now",
-    "watchVideo": "Watch Video",
-    "ourStory": "Our Story"
+    "donateNow": "Give Now",
+    "watchVideo": "Watch Service",
+    "ourStory": "Our Journey"
   },
   "AboutSection": {
-    "subtitle": "About Us",
-    "title": "Who We Are",
-    "highlight": "Are",
-    "descriptionLead": "We are the <highlight>Bridges of Hope Association</highlight> for Development and Rehabilitation, a non-profit humanitarian organization officially registered and licensed in Turkey and Palestine, and a pioneer in voluntary work as well as educational, health, and developmental services.",
-    "descriptionBody": "We strive to serve, develop, and rehabilitate individuals in areas affected by disasters, wars, conflicts, and poverty-stricken countries, adhering to principles of honesty, responsibility, and justice. We also seek to build bridges of solidarity and giving, aiming to empower individuals and elevate their lives, guided by our slogan. Our images can be used by non-profit or charity organizations.",
-    "quote": "With humanity wherever it may be… dignity preserved and lives rebuilt.",
+    "subtitle": "Who We Are",
+    "title": "A Community of Faith",
+    "highlight": "Faith",
+    "descriptionLead": "We are <highlight>Bridges of Faith Church</highlight>, a Christ-centered ministry dedicated to spiritual awakening, community service, and providing a helping hand to those in hardship.",
+    "descriptionBody": "Guided by the principles of love, integrity, and grace, we work to rehabilitate the brokenhearted and support those living in poverty. We believe that through faith and collective action, we can empower every individual to live a life of purpose.",
+    "quote": "Serving God by serving others… wherever there is a need.",
     "features": {
-      "treatmentHelp": "Treatment Help",
-      "fundRaised": "Fund Raised"
+      "treatmentHelp": "Spiritual Care",
+      "fundRaised": "Mission Funds"
     },
-    "learnMore": "Photo Album",
-    "needHelpLabel": "Need help?",
-    "phoneNumber": "+90 501 636 66 41",
-    "imageAltPrimary": "Organization Team",
-    "imageAltSecondary": "Community Support",
-    "fundedLabel": "We've Funded",
-    "fundedAmount": "50K Dollars",
-    "supportLabel": "24 hour Support"
+    "learnMore": "Ministry Gallery",
+    "needHelpLabel": "Need Prayer?",
+    "phoneNumber": "+1 800 555 FAITH",
+    "imageAltPrimary": "Congregation Gathering",
+    "imageAltSecondary": "Community Outreach",
+    "fundedLabel": "Lives Touched",
+    "fundedAmount": "10k Souls",
+    "supportLabel": "24/7 Prayer Support"
   },
   "CoreValues": {
-    "subtitle": "Core Values",
-    "title": "Our <highlight>Core Values</highlight>",
+    "subtitle": "Foundations",
+    "title": "Our <highlight>Core Beliefs</highlight>",
     "readMore": "Read More",
     "values": [
       {
-        "title": "Unlimited Giving",
-        "description": "Unlimited giving through well-planned strategies."
+        "title": "Unconditional Love",
+        "description": "Loving our neighbors as ourselves through selfless service."
       },
       {
-        "title": "Transparency",
-        "description": "Transparency and strong organizational and administrative structure."
+        "title": "Scriptural Integrity",
+        "description": "Transparency and commitment to the teachings of the Bible."
       },
       {
-        "title": "Social Justice",
-        "description": "Social justice and respect for human rights."
+        "title": "Equality & Justice",
+        "description": "Advocating for the rights and dignity of every human being."
       },
       {
-        "title": "Cooperation",
-        "description": "Cooperation and networking to achieve mutual benefit."
+        "title": "Fellowship",
+        "description": "Strengthening the community through prayer and shared mission."
       }
     ]
   },
   "AreasOfWorkSection": {
-    "label": "Our Areas of Work",
-    "title": "Our Areas of <br></br><outline>Work</outline>",
-    "summary": "We provide an integrated system of humanitarian and developmental services based on the belief that the human being is an indivisible whole, and that dignity can only be preserved through the integration of education, rehabilitation, healthcare, relief, and social inclusion. Our programs are designed to respond to urgent needs and create sustainable impact.",
-    "keyPrograms": "Key Programs",
+    "label": "Our Ministries",
+    "title": "How We <br></br><outline>Serve</outline>",
+    "summary": "We provide a holistic approach to ministry, believing that a person’s well-being requires spiritual peace, physical health, and educational opportunity. Our programs are designed to meet both the immediate and eternal needs of our community.",
+    "keyPrograms": "Key Ministries",
     "cta": {
-      "title": "Want to support these initiatives?",
-      "description": "Every contribution helps us expand our reach to those who need it most.",
-      "button": "Donate Now"
+      "title": "Will you join our mission?",
+      "description": "Your tithes and offerings enable us to reach the lost and help the suffering.",
+      "button": "Give Today"
     },
     "pillars": [
       {
-        "title": "Rehabilitation & Capacity Building",
-        "description": "We believe rehabilitation is the bridge from disability to self-reliance, and from isolation to inclusion. Therefore, we focus on building individuals psychologically, behaviorally, and skillfully, targeting the following cases:",
+        "title": "Spiritual Growth & Counseling",
+        "description": "We believe in the restoration of the soul and the empowerment of the mind. Our counseling and discipleship programs target:",
         "services": [
           {
-            "name": "Down Syndrome",
-            "description": "We provide comprehensive rehabilitation programs that develop cognitive, motor, and social skills, while supporting families, enabling individuals to become active and productive members of their communities."
+            "name": "Family Restoration",
+            "description": "We offer biblical counseling to strengthen marriages and help families navigate life's challenges with faith and patience."
           },
           {
-            "name": "Speech and Communication Disorders",
-            "description": "We provide specialized therapy sessions that help individuals express themselves, because having a voice is a right, and communication is the foundation for inclusion and building human relationships."
+            "name": "Grief and Trauma Support",
+            "description": "Specialized pastoral care for those who have lost loved ones or survived conflict, helping them find peace in God's presence."
           },
           {
-            "name": "Autism Spectrum Disorder (ASD)",
-            "description": "We offer early individualized rehabilitation interventions aimed at improving communication and behavior, reducing isolation, and building bridges of interaction between the child and their surroundings."
-          },
-          {
-            "name": "Psychological and Social Support",
-            "description": "We provide safe spaces for psychological therapy and social support to heal the effects of trauma and war, helping individuals restore emotional balance and regain their ability to move forward."
+            "name": "Youth Discipleship",
+            "description": "Empowering the next generation with moral foundations, leadership skills, and a strong sense of identity in Christ."
           }
         ]
       },
       {
-        "title": "Healthcare & Medical Services",
-        "description": "We consider health as the foundation of a dignified life. We aim to relieve pain and protect individuals from health deterioration in fragile environments, focusing on the following cases:",
+        "title": "Compassion & Health Outreach",
+        "description": "Following Christ’s example of healing, we aim to alleviate physical suffering and provide medical support in fragile environments.",
         "services": [
           {
-            "name": "Physical Paralysis",
-            "description": "We provide medical and rehabilitation care to improve mobility and independence, and reduce physical complications."
+            "name": "Elderly Care",
+            "description": "Providing companionship, home visits, and assistance to the seniors in our community who may feel isolated."
           },
           {
-            "name": "Cerebral Palsy",
-            "description": "We provide continuous physical therapy and rehabilitation programs for children to help develop their motor abilities and reduce the burden on their families."
-          },
-          {
-            "name": "Hearing Impairment",
-            "description": "We provide supportive services to improve hearing and communication abilities, opening doors to education and social integration."
-          },
-          {
-            "name": "Amputation Cases",
-            "description": "We provide suitable prosthetic limbs and ensure continuous medical, functional, and psychological rehabilitation to restore mobility and strengthen independence. We believe that losing a limb does not mean losing life or hope, but rather marks the beginning of a new journey that requires real support to restore mobility, dignity, and the individual's role within their family and community. In the Gaza Strip alone, more than 21,000 amputation cases have been recorded. Therefore, we work to transform pain into life energy and injury into an opportunity for empowerment and reintegration."
-          },
-          {
-            "name": "Physiotherapy",
-            "description": "We provide physiotherapy sessions aimed at restoring motor functions, reducing pain, and improving daily quality of life."
+            "name": "Disability Support",
+            "description": "Ensuring our church and community are accessible, providing assistive devices, and advocating for the inclusion of all."
           }
         ]
       },
       {
-        "title": "Inclusive Education",
-        "description": "We view education as a right and a gateway to empowerment, not merely a service. Through education, we seek to protect generations from ignorance and marginalization and build a more just and humane future, targeting the following cases:",
+        "title": "Christian Education",
+        "description": "We view education as a gateway to fulfilling one's God-given potential. Our educational programs include:",
         "services": [
           {
-            "name": "Intellectual Disability",
-            "description": "We provide simplified educational and rehabilitation programs focusing on developing basic skills, enabling individuals to interact with their surroundings and improve their daily life quality."
+            "name": "Sunday School",
+            "description": "Providing age-appropriate biblical teaching that builds character and deepens spiritual understanding."
           },
           {
-            "name": "Learning Difficulties",
-            "description": "We support children with normal abilities who face challenges in reading, writing, or comprehension, through specialized educational assistance that turns setbacks into progress and protects children from frustration. Learning differences are not weakness, but rather a unique way of learning that requires understanding and support."
-          },
-          {
-            "name": "Education for People with Special Needs",
-            "description": "We provide specialized educational programs that consider each child's abilities and needs, giving them the opportunity to learn with dignity, build self-confidence, and unlock their hidden potential rather than limiting them within the framework of disability."
-          },
-          {
-            "name": "Literacy Programs",
-            "description": "We empower adults with reading and writing skills, because illiteracy is not only a lack of knowledge, but a barrier that deprives individuals of participation and self-reliance."
+            "name": "Scholarship Programs",
+            "description": "Assisting children from low-income families with school fees and supplies to pursue their dreams."
           }
         ]
       },
       {
-        "title": "Humanitarian Response",
-        "description": "We remain present where crises intensify, because relief is not merely food parcels, but a humanitarian stance that preserves life and protects dignity. We implement the following projects:",
+        "title": "Global Missions & Relief",
+        "description": "Our church reaches beyond its walls to provide emergency aid and spread hope in crisis zones.",
         "services": [
           {
-            "name": "Food Assistance Projects",
-            "description": "We provide food to affected families through food parcels and community kitchens, because hunger does not wait, and securing basic nutrition is the first step in protecting individuals from collapse and malnutrition.",
-            "subItems": [
-              "Food parcels",
-              "Food baskets",
-              "Bread distribution",
-              "Community kitchens"
-            ]
+            "name": "Food Bank",
+            "description": "Securing nutrition for the homeless and hungry through community-led food distribution and hot meals."
           },
           {
-            "name": "Safe Drinking Water Supply",
-            "description": "We provide clean drinking water through water truck projects and well-drilling initiatives, because water is life, and its absence is a direct threat to health and dignity."
-          },
-          {
-            "name": "Shelter",
-            "description": "We provide tents and caravans to affected families as an urgent solution that protects them from homelessness and ensures a minimum level of safety."
-          },
-          {
-            "name": "Orphan Sponsorship",
-            "description": "We provide monthly sponsorship and comprehensive care for orphans, ensuring their basic needs, education rights, and emotional support, allowing them to grow with dignity and hope."
-          },
-          {
-            "name": "Construction and Renovation",
-            "description": "We contribute to building and renovating schools and mosques, restoring vital facilities that form the backbone of community stability."
-          },
-          {
-            "name": "Cash Assistance Projects",
-            "description": "We provide carefully planned cash assistance and deliver donations to eligible beneficiaries through transparent mechanisms, enabling the most vulnerable families to meet essential needs with dignity and alleviating poverty burdens."
-          },
-          {
-            "name": "Clothing Projects",
-            "description": "We provide clothes, shoes, children's toys, and winter supplies for the most vulnerable families and cases, because warmth is a right, and joy is a human need no less important than food."
+            "name": "Clean Water Missions",
+            "description": "Digging wells and providing filtration systems in areas where safe water is a luxury."
           }
         ]
       }
     ]
   },
   "Statistics": {
-    "subtitle": "Our Impact",
-    "title": "Making a Real Difference",
-    "highlight": "Difference",
+    "subtitle": "Our Reach",
+    "title": "Spreading the Light",
+    "highlight": "Light",
     "stats": {
-      "volunteers": "Active Volunteers",
-      "funds": "Funds Raised",
-      "projects": "Projects Completed",
+      "volunteers": "Active Members",
+      "funds": "Missions Funded",
+      "projects": "Outreach Completed",
       "presence": "Global Presence"
     }
   },
   "Blog": {
-    "label": "News And Blogs",
-    "heroTitle": "Blog",
-    "title": "We Articles From <highlight>Blog</highlight>",
-    "subtitle": "News and Story",
+    "label": "Inspiration & News",
+    "heroTitle": "Devotionals",
+    "title": "Messages from the <highlight>Pulpit</highlight>",
+    "subtitle": "News & Testimonies",
     "readMore": "Read More",
-    "viewAll": "View all blogs",
-    "author": "Admin",
-    "comment": "Comment",
+    "viewAll": "View all posts",
+    "author": "Pastor",
+    "comment": "Thoughts",
     "posts": [
       {
-        "title": "Caring For The Elderly And Vulnerable Strategy",
-        "excerpt": "We poor standard chunk nibh velit majority suffered alteration in some form aliquet sollic tudin.",
-        "date": "03 Aug 2024"
+        "title": "Finding Peace in the Midst of a Storm",
+        "excerpt": "A reflection on how faith can carry us through the most difficult seasons of life.",
+        "date": "12 Oct 2025"
       },
       {
-        "title": "Help This People In Needleo Blog.",
-        "excerpt": "We poor standard chunk nibh velit majority suffered alteration in some form aliquet sollic tudin.",
-        "date": "03 Aug 2024"
-      },
-      {
-        "title": "Education For Poor Children Is A Must",
-        "excerpt": "We poor standard chunk nibh velit majority suffered alteration in some form aliquet sollic tudin.",
-        "date": "03 Aug 2024"
+        "title": "The Power of Community Giving",
+        "excerpt": "How our latest mission trip transformed lives through small acts of kindness.",
+        "date": "05 Nov 2025"
       }
     ]
   },
   "Causes": {
-    "subtitle": "Help & Donate Us",
-    "title": "Our Recent Causes",
-    "highlight": "Causes",
+    "subtitle": "Support Our Work",
+    "title": "Ongoing Mission Appeals",
+    "highlight": "Appeals",
     "items": [
       {
-        "title": "Pure Water For The World",
-        "description": "Providing clean water access to communities in need",
-        "category": "Water"
+        "title": "Sanctuary Renovation Fund",
+        "description": "Expanding our space to welcome more families into our community.",
+        "category": "Church Building"
       },
       {
-        "title": "Education For Every Child",
-        "description": "Building schools and providing educational resources",
-        "category": "Education"
-      },
-      {
-        "title": "Medical Camp In Africa",
-        "description": "Providing healthcare services to remote villages",
-        "category": "Medical"
+        "title": "Winter Outreach Drive",
+        "description": "Providing warmth for the homeless during the upcoming winter months.",
+        "category": "Local Outreach"
       }
     ],
-    "raisedLabel": "Raised",
-    "goalLabel": "Goal",
-    "donateNow": "Donate Now"
+    "raisedLabel": "Received",
+    "goalLabel": "Target",
+    "donateNow": "Give Now"
   },
   "ContactSection": {
-    "subtitle": "Contact",
-    "title": "Let’s Build Real Impact Together",
-    "highlight": "Impact",
-    "description": "Have a question, idea, or partnership in mind? Reach out and our team will respond as quickly as possible.",
+    "subtitle": "Get in Touch",
+    "title": "Let’s Connect and Pray Together",
+    "highlight": "Together",
+    "description": "Whether you need prayer, have a question, or want to volunteer, we are here for you.",
     "info": {
       "emailTitle": "Email Us",
-      "emailDetail": "info@umutkopruleri.org",
-      "visitTitle": "Visit Us",
-      "visitDetail": "Adnan Menderes Bulvari Vatan Caddesi No:14 D:4 Faith",
-      "hoursTitle": "Working Hours",
-      "hoursDetail": "Mon - Fri: 9:00 AM - 6:00 PM"
+      "emailDetail": "office@bridgesoffaith.org",
+      "visitTitle": "Our Location",
+      "visitDetail": "14 Grace Avenue, Faith Cathedral, City Center",
+      "hoursTitle": "Service Times",
+      "hoursDetail": "Sun: 9AM & 11AM | Wed: 7PM"
     },
     "form": {
       "name": "Your Name",
       "email": "Email Address",
       "phone": "Phone Number",
-      "message": "Tell us about your request",
+      "message": "Prayer Request / Message",
       "button": "Send Message"
     },
-    "success": "Thanks! We’ll be in touch shortly."
+    "success": "God bless you! We will reach out to you shortly."
   },
   "Pages": {
     "gallery": {
-      "title": "Photo Album",
-      "description": "A visual snapshot of our latest projects and field work.",
+      "title": "Ministry Photo Album",
+      "description": "A visual snapshot of our worship services and community mission work.",
       "comingSoon": "Gallery content will be added soon.",
-      "items": [
-        {
-          "title": "Rehabilitation Center Opening",
-          "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200"
-        },
-        {
-          "title": "Community Nutrition Support",
-          "image": "https://images.unsplash.com/photo-1509095087301-02c74a001b06?q=80&w=1200"
-        },
-        {
-          "title": "Education Lab Setup",
-          "image": "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?q=80&w=1200"
-        },
-        {
-          "title": "Mobile Health Outreach",
-          "image": "https://images.unsplash.com/photo-1509059852496-f3822ae057bf?q=80&w=1200"
-        },
-        {
-          "title": "Assistive Devices Training",
-          "image": "https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=1200"
-        },
-        {
-          "title": "Youth Learning Program",
-          "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200"
-        }
-      ]
+      "items": []
     },
     "privacy": {
       "title": "Privacy Policy",
-      "organization": "Bridges of Hope Association for Development and Rehabilitation",
-      "intro": "Bridges of Hope Association for Development and Rehabilitation is committed to protecting the privacy of visitors to our website, donors, partners, volunteers, and beneficiaries. This Privacy Policy explains how we collect, use, store, and protect your information when you interact with our website and services.",
-      "introNote": "By using our website, you agree to the terms outlined in this policy.",
-      "sections": [
-        {
-          "title": "1. Information We Collect",
-          "description": "We may collect the following types of information:",
-          "subsections": [
-            {
-              "title": "Personal Information",
-              "items": [
-                "Full name",
-                "Email address",
-                "Phone number",
-                "Mailing address",
-                "Donation and payment details"
-              ]
-            },
-            {
-              "title": "Technical Information",
-              "items": [
-                "IP address",
-                "Browser type and device information",
-                "Pages visited and time spent on the website",
-                "Cookies and usage data"
-              ]
-            },
-            {
-              "title": "Donation Information",
-              "items": [
-                "Donation amount",
-                "Payment method",
-                "Transaction date",
-                "Donation preferences (if applicable)"
-              ]
-            }
-          ]
-        },
-        {
-          "title": "2. How We Use Your Information",
-          "description": "We use collected information to:",
-          "items": [
-            "Process donations and issue receipts",
-            "Communicate with donors, volunteers, and partners",
-            "Respond to inquiries and requests",
-            "Improve our website and user experience",
-            "Maintain internal records and reporting",
-            "Comply with legal and regulatory requirements"
-          ],
-          "note": "We do not sell, rent, or trade personal information to third parties for marketing purposes."
-        },
-        {
-          "title": "3. Data Protection and Security",
-          "description": "We implement appropriate technical and organizational measures to protect your data against:",
-          "items": [
-            "Unauthorized access",
-            "Loss, misuse, or alteration",
-            "Unauthorized disclosure"
-          ],
-          "note": "Online payment transactions are processed through trusted third-party payment providers that use secure encryption protocols."
-        },
-        {
-          "title": "4. Sharing of Information",
-          "description": "We may share information only when necessary and under the following circumstances:",
-          "items": [
-            "With payment service providers to process donations",
-            "To comply with legal obligations or lawful requests",
-            "To protect the rights, safety, or integrity of the organization or beneficiaries"
-          ],
-          "note": "All data sharing is limited to what is strictly necessary."
-        },
-        {
-          "title": "5. Cookies",
-          "description": "Our website may use cookies to enhance user experience and analyze website performance.",
-          "note": "You may adjust your browser settings to refuse cookies; however, some features of the website may not function properly as a result."
-        },
-        {
-          "title": "6. Your Rights",
-          "description": "Depending on applicable laws, you may have the right to:",
-          "items": [
-            "Access the personal data we hold about you",
-            "Request correction or updating of your information",
-            "Request deletion of your data (unless legal obligations require retention)",
-            "Withdraw consent to receive communications"
-          ],
-          "note": "To exercise these rights, please contact us using the details below."
-        },
-        {
-          "title": "7. External Links",
-          "description": "Our website may contain links to external websites. We are not responsible for the privacy practices or content of third-party sites. We encourage users to review their privacy policies separately."
-        },
-        {
-          "title": "8. Policy Updates",
-          "description": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date."
-        }
-      ],
-      "contact": {
-        "title": "9. Contact Information",
-        "description": "If you have any questions regarding this Privacy Policy, please contact us:",
-        "items": [
-          {
-            "label": "Email",
-            "value": "info@umutkopruleri.org"
-          },
-          {
-            "label": "Phone",
-            "value": "+90 501 636 66 41"
-          },
-          {
-            "label": "Address",
-            "value": "Adnan Menderes Bulvari Vatan Caddesi No:14 D:4 Faith"
-          }
-        ]
-      },
-      "updatedLabel": "Last Updated",
-      "updatedValue": "22-2-2026"
+      "organization": "Bridges of Faith Community Church",
+      "intro": "We are committed to protecting the privacy of our members, donors, and visitors.",
+      "introNote": "By using our website, you agree to these terms.",
+      "sections": []
     },
     "terms": {
       "title": "Terms & Conditions",
-      "description": "These terms outline the rules and conditions for using our website and services. Full details will be provided here."
+      "description": "These terms outline the guidelines for using our website and digital services."
     },
     "volunteer": {
-      "title": "Volunteer",
-      "description": "Join our volunteer network to support education, healthcare, rehabilitation, and relief programs. Registration details will be available here."
+      "title": "Join a Ministry",
+      "description": "Become a volunteer in our worship, media, or outreach teams. Sign up today!"
     },
     "contactPage": {
       "title": "Contact Us",
       "kicker": "Get In Touch",
-      "description": "Visit our office or reach out to our team. We’re ready to answer your questions and connect you with the right support.",
-      "mapAlt": "Map showing our office location",
+      "description": "Visit our sanctuary or reach out to our pastoral team for support.",
+      "mapAlt": "Map showing our church location",
       "cards": {
-        "address": "Address",
+        "address": "Sanctuary Address",
         "email": "Email Address",
         "phone": "Phone Number"
       }
     },
     "aboutPage": {
       "pageTitle": "About Us",
-      "kicker": "About Us",
-      "title": "We Believe This Give For <highlight>Poor People</highlight> Changing Lives",
-      "description": "We work alongside communities to restore dignity, expand opportunity, and build resilient futures for families affected by conflict and hardship.",
-      "imageAlt": "Children waiting for support",
+      "kicker": "Our Ministry",
+      "title": "Building Lives through <highlight>Grace</highlight>",
+      "description": "We work alongside families to restore faith, expand opportunity, and build resilient futures.",
+      "imageAlt": "Congregation in worship",
       "features": {
-        "teamTitle": "Join our Team",
-        "teamDescription": "Volunteer alongside our field teams to deliver direct relief and long-term services.",
-        "fundraiseTitle": "Quick Fundraising",
-        "fundraiseDescription": "Start a campaign in minutes and help us sustain life-changing programs."
+        "teamTitle": "Join our Ministry",
+        "teamDescription": "Volunteer alongside our outreach teams to serve those in need.",
+        "fundraiseTitle": "Support a Mission",
+        "fundraiseDescription": "Contribute to our seasonal appeals and help us sustain our programs."
       }
     },
     "impact": {
-      "title": "Impact",
-      "description": "Discover the impact of our programs, the communities we serve, and the outcomes achieved."
+      "title": "Our Impact",
+      "description": "Discover how the Gospel is transforming lives in our local and global community."
     },
     "projects": {
       "hero": {
-        "kicker": "Projects",
+        "kicker": "Outreach",
         "title": "Building <highlight>Hope</highlight> through action",
-        "description": "Every project is designed to restore dignity, expand access, and build resilient communities.",
-        "primaryCta": "Support a Project",
+        "description": "Every mission is designed to restore dignity and spread the Gospel.",
+        "primaryCta": "Support a Mission",
         "secondaryCta": "Talk to Us",
         "stats": [
-          { "label": "Active Projects", "value": "12+" },
-          { "label": "Countries", "value": "3" },
-          { "label": "Lives Reached", "value": "48K+" },
-          { "label": "Partners", "value": "25+" }
+          { "label": "Active Missions", "value": "10+" },
+          { "label": "Regions", "value": "5" },
+          { "label": "Lives Reached", "value": "20K+" },
+          { "label": "Partners", "value": "15+" }
         ]
       },
       "active": {
-        "kicker": "In Progress",
-        "title": "Projects in Motion",
-        "description": "Focused initiatives delivering rehabilitation, healthcare, and inclusive education right now.",
-        "items": [
-          {
-            "title": "Inclusive Rehabilitation Centers",
-            "description": "Upgrading care spaces with therapy rooms, assistive technology, and specialist teams.",
-            "location": "Gaza & Turkey",
-            "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000",
-            "duration": "2024 - 2026",
-            "target": "$20k",
-            "impact": "6,500 beneficiaries",
-            "status": "Ongoing"
-          },
-          {
-            "title": "Health & Mobility Clinics",
-            "description": "Mobile clinics delivering urgent care, diagnostics, and rehabilitation follow-ups.",
-            "location": "Northern Syria",
-            "image": "https://images.unsplash.com/photo-1509095087301-02c74a001b06?q=80&w=1000",
-            "duration": "2024 - 2025",
-            "target": "$30k",
-            "impact": "9,000 treatments",
-            "status": "Scaling"
-          },
-          {
-            "title": "Education Restart Labs",
-            "description": "Inclusive learning labs with psychosocial support for displaced children.",
-            "location": "South Palestine",
-            "image": "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?q=80&w=1000",
-            "duration": "2024 - 2025",
-            "target": "$25k",
-            "impact": "3,200 learners",
-            "status": "Launching"
-          }
-        ]
+        "kicker": "Current Missions",
+        "title": "Missions in Motion",
+        "description": "Focused initiatives delivering care, prayer, and support right now.",
+        "items": []
       },
-      "completed": {
-        "kicker": "Completed",
-        "title": "Completed Projects",
-        "description": "Programs delivered with measurable outcomes and sustainable handover.",
-        "items": [
-          {
-            "title": "Emergency Relief Response",
-            "description": "Rapid response kits, shelter support, and food distribution for affected families.",
-            "location": "Gaza Strip",
-            "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1000",
-            "duration": "2023",
-            "target": "$18k",
-            "impact": "14,000 families",
-            "status": "Completed"
-          },
-          {
-            "title": "Assistive Devices Distribution",
-            "description": "Prosthetics and mobility aids delivered with training and maintenance support.",
-            "location": "Istanbul",
-            "image": "https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=1000",
-            "duration": "2022 - 2023",
-            "target": "$22k",
-            "impact": "2,500 devices",
-            "status": "Completed"
-          },
-          {
-            "title": "Community Nutrition Campaign",
-            "description": "Nutrition education and food assistance for vulnerable households.",
-            "location": "Northern Gaza",
-            "image": "https://images.unsplash.com/photo-1509059852496-f3822ae057bf?q=80&w=1000",
-            "duration": "2022",
-            "target": "$16k",
-            "impact": "7,800 people",
-            "status": "Completed"
-          }
-        ]
-      },
-      "labels": {
-        "impact": "Impact",
-        "duration": "Timeline",
-        "target": "Target"
-      },
+      "completed": { "kicker": "Completed", "title": "Past Missions", "description": "Successfully delivered programs.", "items": [] },
+      "labels": { "impact": "Impact", "duration": "Timeline", "target": "Goal" },
       "cta": {
-        "title": "Ready to fuel the next project?",
-        "description": "Your contribution powers the next wave of rehabilitation, relief, and education.",
-        "button": "Donate Now"
+        "title": "Ready to fuel the next mission?",
+        "description": "Your offering powers the next wave of outreach and healing.",
+        "button": "Give Now"
       }
     },
     "donate": {
-      "badge": "Support Our Work",
-      "title": "Donate Now",
-      "description": "Your donation fuels rehabilitation, healthcare, education, and emergency relief for communities that need it most.",
-      "primaryCta": "Start Donation",
-      "secondaryCta": "Talk to Us",
+      "badge": "Support Our Ministry",
+      "title": "Give an Offering",
+      "description": "Your giving fuels our missions, pastoral care, and community outreach.",
+      "primaryCta": "Give Now",
+      "secondaryCta": "Contact Office",
       "impact": {
         "kicker": "Your Impact",
-        "title": "Where your donation goes",
-        "description": "Every contribution is directed to programs that restore dignity and rebuild lives.",
+        "title": "Where your giving goes",
+        "description": "Every cent is directed towards spreading the Gospel and helping the poor.",
         "items": [
-          {
-            "title": "Rehabilitation & Care",
-            "description": "Therapy, assistive equipment, and long-term care for people with disabilities."
-          },
-          {
-            "title": "Education Access",
-            "description": "Learning support, inclusive classrooms, and resources for children and youth."
-          },
-          {
-            "title": "Emergency Relief",
-            "description": "Rapid response for families affected by conflict, disaster, or displacement."
-          }
+          { "title": "Mission Work", "description": "Global evangelism and disaster relief projects." },
+          { "title": "Youth & Children", "description": "Sunday school materials and youth development programs." },
+          { "title": "Community Care", "description": "Local food banks and medical assistance for families." }
         ]
       },
       "options": {
         "kicker": "Ways to Give",
-        "title": "Choose the donation method",
-        "description": "Give once, give monthly, or use a direct transfer that suits your preference.",
+        "title": "Choose your method",
+        "description": "Tithe, give once, or set up a recurring monthly offering.",
         "items": [
-          {
-            "title": "One-Time Gift",
-            "description": "Make an immediate impact with a single donation of any size.",
-            "detail": "One-Time"
-          },
-          {
-            "title": "Monthly Support",
-            "description": "Sustain long-term programs with a recurring contribution.",
-            "detail": "Monthly"
-          },
-          {
-            "title": "Bank Transfer",
-            "description": "Prefer wire or IBAN? We can share verified transfer details.",
-            "detail": "Transfer"
-          }
+          { "title": "One-Time Gift", "description": "Support a specific mission or need.", "detail": "Once" },
+          { "title": "Monthly Tithe", "description": "Regular support for the church's operations.", "detail": "Monthly" },
+          { "title": "Bank Transfer", "description": "Direct wire to the church treasury.", "detail": "Transfer" }
         ]
       },
       "form": {
-        "kicker": "Quick Donate",
-        "title": "Choose your amount",
-        "description": "Coming soon",
+        "kicker": "Quick Give",
+        "title": "Select Amount",
+        "description": "Secure online giving coming soon.",
         "mockLabel": "Coming Soon",
         "amountLabel": "Select Amount",
-        "amounts": ["$25", "$50", "$100", "$250", "$500"],
+        "amounts": ["$25", "$50", "$100", "$500"],
         "customLabel": "Custom Amount",
         "summaryLabel": "Summary",
-        "summary": {
-          "amount": "Donation",
-          "frequency": "Frequency",
-          "once": "One-time"
-        },
-        "submit": "Coming Soon",
+        "summary": { "amount": "Offering", "frequency": "Frequency", "once": "One-time" },
+        "submit": "Submit Offering",
         "note": "Coming soon"
       },
       "promise": {
-        "kicker": "Our Promise",
-        "title": "Transparency you can trust",
-        "description": "We share updates and allocate every gift responsibly so you always know your impact.",
-        "items": ["Clear reporting", "Secure handling", "Local partnerships"]
+        "kicker": "Our Stewardship",
+        "title": "Integrity you can trust",
+        "description": "We are accountable to our congregation and God for every gift received.",
+        "items": ["Audited reports", "Prayer-led allocation", "Local impact"]
       },
       "campaigns": {
-        "kicker": "Featured Causes",
-        "title": "Support a life-changing cause",
-        "description": "Join ongoing campaigns that bring clean water, education, and care.",
-        "viewAllLabel": "View Campaigns",
-        "donateLabel": "Donate",
+        "kicker": "Special Missions",
+        "title": "Support a specific cause",
+        "description": "Join ongoing campaigns that bring light to dark places.",
+        "viewAllLabel": "View All Missions",
+        "donateLabel": "Give",
         "goalLabel": "Goal",
         "currency": "USD",
-        "items": [
-          {
-            "category": "Pure Water",
-            "slug": "pure-water",
-            "title": "We provide pure water for vulnerable families.",
-            "description": "Help fund clean water systems and safe drinking access.",
-            "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200",
-            "raisedAmount": 5000,
-            "goalAmount": 23000,
-            "accentColor": "#1cab2d"
-          },
-          {
-            "category": "Education",
-            "slug": "education",
-            "title": "Empowering futures through education.",
-            "description": "Support school materials, inclusive classrooms, and teachers.",
-            "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200",
-            "raisedAmount": 7500,
-            "goalAmount": 23000,
-            "accentColor": "#F5B100"
-          },
-          {
-            "category": "Medical",
-            "slug": "medical",
-            "title": "Providing access to safe health services.",
-            "description": "Deliver urgent medical care and rehabilitation support.",
-            "image": "https://images.unsplash.com/photo-1509095087301-02c74a001b06?q=80&w=1200",
-            "raisedAmount": 12000,
-            "goalAmount": 23000,
-            "accentColor": "#28D08F"
-          },
-          {
-            "category": "Food Relief",
-            "slug": "food-relief",
-            "title": "Nourishing families with emergency food packs.",
-            "description": "Supply staples and nutrition for displaced households.",
-            "image": "https://images.unsplash.com/photo-1509095087301-02c74a001b06?q=80&w=1200",
-            "raisedAmount": 9800,
-            "goalAmount": 20000,
-            "accentColor": "#F97316"
-          },
-          {
-            "category": "Shelter",
-            "slug": "shelter",
-            "title": "Safe shelter for families recovering from crisis.",
-            "description": "Provide temporary housing and essential supplies.",
-            "image": "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=1200",
-            "raisedAmount": 6400,
-            "goalAmount": 18000,
-            "accentColor": "#0EA5E9"
-          },
-          {
-            "category": "Rehabilitation",
-            "slug": "rehabilitation",
-            "title": "Supporting rehabilitation and mobility services.",
-            "description": "Fund therapy sessions and assistive equipment.",
-            "image": "https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?q=80&w=1200",
-            "raisedAmount": 5200,
-            "goalAmount": 15000,
-            "accentColor": "#8B5CF6"
-          }
-        ]
+        "items": []
       },
       "cta": {
-        "title": "We are a nonprofit charity <highlight>world</highlight> organization",
-        "description": "Together we deliver relief, rehabilitation, and hope for families who need it most.",
-        "buttonLabel": "Donate Now",
+        "title": "We are a <highlight>Christ-centered</highlight> community",
+        "description": "Together we deliver faith, hope, and love to those who need it most.",
+        "buttonLabel": "Give Now",
         "splashImage": "/wave.png",
         "photoImage": "/about-one-img-2.jpg"
       }
     },
     "donateDetail": {
-      "raisedLabel": "Raised",
+      "raisedLabel": "Received",
       "selectPaymentTitle": "Select Payment Method",
-      "paymentMethods": ["Test Donation", "Offline Donation", "Credit Card"],
+      "paymentMethods": ["Credit Card", "Bank Transfer", "Offline Check"],
       "firstNameLabel": "First Name",
       "lastNameLabel": "Last Name",
-      "emailLabel": "Email Address",
-      "donationTotalLabel": "Donation Total",
-      "donateNowLabel": "Donate Now",
-      "amountOptions": [5, 10, 20, 50, 100],
-      "customAmountLabel": "$ custom",
-      "categoriesTitle": "Categories",
+      "emailLabel": "Email",
+      "donationTotalLabel": "Total Offering",
+      "donateNowLabel": "Give Now",
+      "amountOptions": [10, 20, 50, 100, 500],
+      "customAmountLabel": "$ Custom",
+      "categoriesTitle": "Ministries",
       "categories": [
-        { "label": "Donation Drive", "count": 59 },
-        { "label": "Community Outreach", "count": 35 },
-        { "label": "Volunteer Assistance", "count": 12 },
-        { "label": "Fundraising Event", "count": 46 },
-        { "label": "Support Network", "count": 78 },
-        { "label": "Philanthropic Initiative", "count": 89 }
+        { "label": "General Fund", "count": 10 },
+        { "label": "Missions", "count": 5 },
+        { "label": "Building Fund", "count": 2 }
       ],
-      "galleryTitle": "Gallery",
+      "galleryTitle": "Photos",
       "detailParagraphs": [
-        "Web designing in a powerful way of just not an only professions, however, in a passion for our Company. We have to a tendency to believe the idea that smart looking of any website is the first impression on visitors.",
-        "Many people around the world don't have that luxury. Every day, about 1,400 children die from diseases caused by unsafe water and poor sanitation. But it doesn't have to be that way.",
-        "We share transparent updates so you can see how each gift restores dignity and supports long-term recovery."
+        "Your financial support allows us to maintain our sanctuary and reach out to the community.",
+        "We believe that giving is an act of worship and a way to be part of what God is doing.",
+        "We provide transparent updates on how mission funds are used to change lives."
       ]
     },
     "projectsPage": {
       "items": [
-        {
-          "slug": "education-for-children",
-          "title": "Education For All Children",
-          "category": "Education"
-        },
-        {
-          "slug": "clean-water-initiative",
-          "title": "Clean Water Initiative",
-          "category": "Water"
-        },
-        {
-          "slug": "food-security-program",
-          "title": "Food Security Program",
-          "category": "Food"
-        },
-        {
-          "slug": "healthcare-support",
-          "title": "Healthcare Support",
-          "category": "Health"
-        },
-        {
-          "slug": "shelter-construction",
-          "title": "Shelter Construction",
-          "category": "Housing"
-        },
-        {
-          "slug": "elderly-care",
-          "title": "Caring for the Elderly",
-          "category": "Elder Care"
-        },
-        {
-          "slug": "youth-empowerment",
-          "title": "Youth Empowerment",
-          "category": "Youth"
-        },
-        {
-          "slug": "community-development",
-          "title": "Community Development",
-          "category": "Community"
-        },
-        {
-          "slug": "emergency-relief",
-          "title": "Emergency Relief",
-          "category": "Emergency"
-        }
+        { "slug": "evangelism-outreach", "title": "Street Evangelism", "category": "Missions" },
+        { "slug": "clean-water-mission", "title": "Living Water Wells", "category": "Community" },
+        { "slug": "sunday-school", "title": "Building Young Faith", "category": "Education" }
       ]
     },
     "homeVolunteer": {
       "items": [
         {
-          "title": "Join Us Volunteer",
-          "description": "Becoming a volunteer with Chioary means joining a dedicated team committed to making a difference.",
+          "title": "Join Our Volunteer Team",
+          "description": "Becoming a volunteer means joining a dedicated team committed to serving God and the community.",
           "buttonLabel": "See More",
           "href": "/volunteer"
         },
         {
-          "title": "Become Volunteer",
-          "description": "Becoming a volunteer with Chioary means joining a dedicated team committed to making a difference.",
-          "buttonLabel": "See More",
-          "href": "/beneficiaries"
+          "title": "Serve in a Ministry",
+          "description": "Use your talents in worship, media, or hospitality to bless the congregation.",
+          "buttonLabel": "Join Now",
+          "href": "/contact"
         }
       ]
     },
     "projectDetail": {
-      "detailsBadge": "Project Details",
-      "labels": {
-        "name": "Name",
-        "date": "Date",
-        "author": "Author",
-        "tags": "Tags"
-      },
+      "detailsBadge": "Mission Details",
+      "labels": { "name": "Mission", "date": "Date", "author": "Coordinator", "tags": "Focus" },
       "content": {
-        "name": "Water foundation",
-        "date": "23 December, 2023",
-        "author": "Rajin Saleh",
-        "tags": ["Water For All"],
-        "title": "Supporting Health Initiatives",
+        "name": "Global Missions",
+        "date": "2025",
+        "author": "Pastoral Team",
+        "tags": ["Outreach"],
+        "title": "Supporting Global Faith Initiatives",
         "description": [
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley type and scrambled it to make a type specimen book.",
-          "It has survived not only five centuries into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          "We continue to invest in long-term impact, ensuring every project leaves lasting change in communities."
+          "We continue to invest in long-term spiritual impact, ensuring every project leaves a lasting legacy of faith.",
+          "Our missions focus on both physical relief and spiritual restoration."
         ],
-        "checklist": ["Hope Restoration", "Giving Back", "Positive Impact"],
+        "checklist": ["Spiritual Growth", "Community Support", "Faith-Led Action"],
         "business": {
-          "title": "Elevate Your Business with IT Solutions",
-          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley type and scrambled it to make a type specimen book."
+          "title": "Impact Your Community",
+          "description": "Learn how you can use your professional skills to serve the Kingdom of God."
         }
       }
     }
   },
   "Footer": {
-    "aboutText": "We are the Bridges of Hope Association for Development and Rehabilitation, a non-profit humanitarian organization serving communities affected by disasters, wars, and poverty.",
-    "quickLinks": "Quick Links",
-    "aboutUs": "About Us",
-    "ourCauses": "Our Causes",
-    "becomeVolunteer": "Become a Volunteer",
-    "latestEvents": "Latest Events",
+    "aboutText": "Bridges of Faith Community Church is a home for the broken and a light for the lost. We are dedicated to the spiritual and social upliftment of all people.",
+    "quickLinks": "Explore",
+    "aboutUs": "Our Story",
+    "ourCauses": "Our Missions",
+    "becomeVolunteer": "Join a Ministry",
+    "latestEvents": "Church Calendar",
     "contactUs": "Contact Us",
-    "recentNews": "Recent News",
-    "gallery": "Gallery",
-    "rights": "© 2026 Bridges of Hope Association for Development and Rehabilitation. All Rights Reserved.",
+    "recentNews": "Weekly Bulletin",
+    "gallery": "Photos",
+    "rights": "© 2026 Bridges of Faith Community Church. All Rights Reserved.",
     "news": [
-      {
-        "title": "How Your Donations Change Lives",
-        "date": "03 Aug 2024"
-      },
-      {
-        "title": "Volunteer Success Stories",
-        "date": "28 Jul 2024"
-      },
-      {
-        "title": "Building Hope in Communities",
-        "date": "15 Jul 2024"
-      }
+      { "title": "Join us for our Youth Revival", "date": "10 Dec 2025" },
+      { "title": "Building Hope: Our Annual Mission Report", "date": "01 Jan 2026" }
     ],
-    "address": "Adnan Menderes Bulvari Vatan Caddesi No:14 D:4 Faith",
-    "email": "info@umutkopruleri.org",
-    "phone": "+90 501 636 66 41"
+    "address": "14 Grace Avenue, Faith Cathedral",
+    "email": "office@bridgesoffaith.org",
+    "phone": "+1 800 555 FAITH"
   }
 }

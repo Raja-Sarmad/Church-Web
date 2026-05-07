@@ -5,17 +5,8 @@
         "name": "en",
         "type": "string",
         "title": "English"
-      },
-      {
-        "name": "tr",
-        "type": "string",
-        "title": "Turkish"
-      },
-      {
-        "name": "ar",
-        "type": "string",
-        "title": "Arabic"
       }
+      
     ],
     "name": "localizedString",
     "type": "object"

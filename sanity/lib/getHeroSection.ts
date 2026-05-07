@@ -1,20 +1,19 @@
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
-
 import { client } from "./client";
 import { heroQuery } from "./queries";
 
 export type HeroSection = {
   slides?: {
     title?: string;
-    subtitle?: string;
-    text?: string;
+    slogan?: string;      // subtitle ki jagah slogan
+    description?: string; // text ki jagah description
     image?: SanityImageSource;
-    link?: string;
+    buttonLink?: string;  // link ki jagah buttonLink
     buttonLabel?: string;
   }[];
-  donateNowLabel?: string;
 };
 
-export async function getHeroSection(lang: string) {
-  return client.fetch<HeroSection>(heroQuery, { lang });
+export async function getHeroSection(lang?: string) {
+  // Agar sirf English hai toh lang ki zaroorat nahi, query direct chalegi
+  return client.fetch<HeroSection>(heroQuery);
 }

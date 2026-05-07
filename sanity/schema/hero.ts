@@ -7,39 +7,56 @@ export const heroSlide = defineType({
   fields: [
     defineField({
       name: "image",
-      title: "Background Image",
+      title: "Slide Background Image",
       type: "image",
       options: { hotspot: true },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "subtitle",
-      title: "Subtitle",
-      type: "localizedString",
+      name: "slogan",
+      title: "Slogan (Small Top Text)",
+      type: "string",
+      description: "Example: HELP THE NEEDY",
     }),
     defineField({
       name: "title",
-      title: "Title",
-      type: "localizedString",
-    }),
-    defineField({
-      name: "text",
-      title: "Text",
-      type: "localizedString",
-      description: "Optional description text shown below the title.",
-    }),
-    defineField({
-      name: "link",
-      title: "Slide Link",
+      title: "Main Title",
       type: "string",
-      description: "Button URL for this specific slide (e.g. /donate).",
+      description: "Use <highlight>text</highlight> for orange color.",
+    }),
+    defineField({
+      name: "description",
+      title: "Short Description",
+      type: "text",
+      rows: 3,
     }),
     defineField({
       name: "buttonLabel",
-      title: "Button Label",
-      type: "localizedString",
-      description: "CTA button text for this slide. Falls back to global label if empty.",
+      title: "Button Text",
+      type: "string",
+      initialValue: "Donate Now",
+    }),
+    defineField({
+      name: "buttonLink",
+      title: "Button URL",
+      type: "string",
+      initialValue: "/donate",
     }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      subtitle: "slogan",
+      media: "image",
+    },
+    prepare({ title, subtitle, media }) {
+      return {
+        title: title || "No Title",
+        subtitle: subtitle || "No Slogan",
+        media: media,
+      };
+    },
+  },
 });
 
 export const hero = defineType({
@@ -48,16 +65,19 @@ export const hero = defineType({
   type: "document",
   fields: [
     defineField({
-      name: "slides",
-      title: "Slides",
-      type: "array",
-      of: [{ type: "heroSlide" }],
-      validation: (Rule) => Rule.min(1).max(5),
+      name: "sectionName",
+      title: "Section Name",
+      type: "string",
+      initialValue: "Main Home Hero",
+      description: "Internal name for this hero section",
     }),
     defineField({
-      name: "donateNowLabel",
-      title: "Donate Now Label",
-      type: "localizedString",
+      name: "slides",
+      title: "Hero Slides",
+      type: "array",
+      description: "Add multiple slides here. Each slide has its own image and content.",
+      of: [{ type: "heroSlide" }],
+      validation: (Rule) => Rule.min(1).max(10),
     }),
   ],
 });

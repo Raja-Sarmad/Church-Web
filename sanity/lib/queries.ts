@@ -1,11 +1,11 @@
-/**
- * Sanity Queries - Legacy Export File
- *
- * This file now re-exports all queries from the organized query modules.
- * The queries have been split into category-based files for better maintainability.
- *
- * @deprecated Import from '@/sanity/lib/queries' instead (which points to the same exports)
- * @see /sanity/lib/queries/ - New organized query structure
- */
-
-export * from './queries/index';
+// Is query ko copy karke queries.ts mein paste kar dein
+export const heroQuery = `*[_type == "hero"][0]{
+  slides[]{
+    "image": image,
+    "slogan": slogan,
+    "title": title,
+    "description": description,
+    "buttonLabel": buttonLabel,
+    "buttonLink": buttonLink
+  }
+}`;

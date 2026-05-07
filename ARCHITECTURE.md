@@ -235,8 +235,7 @@ All queries use Sanity's GROQ language with `$lang` parameter:
 ### 3 Languages with RTL Support
 
 - **English** (`en`) - Default, LTR
-- **Turkish** (`tr`) - LTR
-- **Arabic** (`ar`) - RTL (right-to-left)
+
 
 ### How Localization Works
 
