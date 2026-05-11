@@ -1,7 +1,5 @@
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
-
 import { client } from "./client";
-import { donationPostBySlugQuery } from "./queries";
 
 export type DonationPostDetail = {
   slug?: string;
@@ -12,19 +10,28 @@ export type DonationPostDetail = {
   raisedAmount?: number;
   goalAmount?: number;
   accentColor?: string;
-  defaultAmount?: number;
-  amountOptions?: number[];
-  youtubeUrl?: string;
-  detailParagraphs?: string[];
-  richContent?: Array<{ _key?: string; _type?: string; style?: string; listItem?: string; level?: number; children?: Array<{ _key?: string; _type?: string; text?: string; marks?: string[] }> }>;
-  categories?: Array<{ label?: string; count?: number }>;
-  galleryImages?: SanityImageSource[];
+  // ... baaki fields agar chahiye hon
 };
 
+// 1. YE FUNCTION SARE CARDS LAYE GA
+export async function getDonationPosts(lang: string) {
+  // Simple query jo sare donation posts utha le gi
+  const query = `*[_type == "donationPost"] {
+    "slug": slug.current,
+    "category": category,
+    title,
+    description,
+    image,
+    raisedAmount,
+    goalAmount,
+    accentColor
+  }`;
+  
+  return client.fetch(query, {}, { cache: "no-store" });
+}
+
+// 2. YE AAPKA PURANA FUNCTION HAI (SINGLE POST KE LIYE)
 export async function getDonationPostBySlug(lang: string, slug: string) {
-  return client.fetch<DonationPostDetail>(
-    donationPostBySlugQuery,
-    { lang, slug },
-    { cache: "no-store" },
-  );
+  const query = `*[_type == "donationPost" && slug.current == $slug][0]`;
+  return client.fetch(query, { slug }, { cache: "no-store" });
 }
