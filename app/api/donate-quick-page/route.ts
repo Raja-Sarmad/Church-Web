@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { getDonateQuickPage } from "@/sanity/lib/getDonateQuickPage";
+import { getDonateQuickPage } from "@/lib/site-data";
 
 export const dynamic = "force-dynamic";
 
@@ -21,4 +21,3 @@ export async function GET(request: Request) {
     });
   }
 }
-

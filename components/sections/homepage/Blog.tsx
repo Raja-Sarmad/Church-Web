@@ -4,12 +4,10 @@ import React from "react";
 import { Link } from "@/navigation";
 import { motion } from "framer-motion";
 import { User, MessageCircle, ArrowRight, Calendar } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/site-intl";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { useQuery } from "@tanstack/react-query";
-import { getBlogSection } from "@/sanity/lib/getBlogSection";
-import { getBlogPosts } from "@/sanity/lib/getBlogPosts";
-import { urlFor } from "@/sanity/lib/image";
+import { getBlogSection, getBlogPosts, urlFor } from "@/lib/site-data";
 import { COLORS } from "@/lib/constants/colors";
 
 const fallbackImages = [

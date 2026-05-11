@@ -1,14 +1,13 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/site-intl";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Link } from "@/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { getAboutSection } from "@/sanity/lib/getAboutSection";
-import { urlFor } from "@/sanity/lib/image";
+import { getAboutSection, urlFor } from "@/lib/site-data";
 
 const AboutSection = ({ locale }: { locale: string }) => {
   const t = useTranslations("AboutSection");

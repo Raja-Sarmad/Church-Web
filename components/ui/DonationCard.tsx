@@ -1,4 +1,4 @@
-import { urlFor } from "@/sanity/lib/image";
+import { urlFor } from "@/lib/site-data";
 import { ArrowRight } from "lucide-react";
 
 type DonationCardProps = {

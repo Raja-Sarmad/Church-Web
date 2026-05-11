@@ -3,10 +3,10 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, Loader2 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/site-intl";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { useQuery } from "@tanstack/react-query";
-import { getContactSection } from "@/sanity/lib/getContactSection";
+import { getContactSection } from "@/lib/site-data";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 const ContactInput = ({ error, className, ...props }: any) => (

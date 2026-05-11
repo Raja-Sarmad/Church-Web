@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { Link } from "@/navigation";
-import { urlFor } from "@/sanity/lib/image";
+import { urlFor } from "@/lib/site-data";
 
 type DonateCtaContent = {
   title?: string;

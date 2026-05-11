@@ -1,10 +1,9 @@
 import { Link } from "@/navigation";
-import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import { urlFor } from "@/sanity/lib/image";
+import { urlFor } from "@/lib/site-data";
 
 type GalleryItem = {
   title: string;
-  heroImage?: SanityImageSource | string;
+  heroImage?: string | { asset?: { url?: string } };
   slug: string;
 };
 

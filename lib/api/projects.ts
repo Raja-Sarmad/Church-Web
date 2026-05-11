@@ -1,4 +1,10 @@
-import type { ProjectData } from "@/sanity/lib/getProjects";
+type ProjectData = {
+  _id?: string;
+  slug?: string;
+  title?: string;
+  category?: string;
+  image?: unknown;
+};
 
 type ProjectsPageData = {
   cta?: {

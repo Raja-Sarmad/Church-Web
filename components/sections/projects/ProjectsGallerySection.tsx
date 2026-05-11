@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
 
 import DonateCta from "@/components/sections/donate/DonateCta";

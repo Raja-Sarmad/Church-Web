@@ -1,12 +1,11 @@
 "use client";
 
 import Slider from "react-slick";
-import { useLocale } from "next-intl";
+import { useLocale } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
 
 import MaskedGalleryCard from "@/components/ui/MaskedGalleryCard";
-import { getGallerySliderSection } from "@/sanity/lib/getGallerySliderSection";
-import { urlFor } from "@/sanity/lib/image";
+import { getGallerySliderSection, urlFor } from "@/lib/site-data";
 
 const fallbackItems = [
   {

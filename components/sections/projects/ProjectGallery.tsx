@@ -2,7 +2,7 @@
 
 import { Link } from "@/navigation";
 import { ArrowRight } from "lucide-react";
-import { urlFor } from "@/sanity/lib/image";
+import { urlFor } from "@/lib/site-data";
 
 type ProjectGalleryItem = {
   _id: string;

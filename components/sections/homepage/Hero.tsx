@@ -1,12 +1,11 @@
 "use client";
 
 import React, { useMemo, useState, useEffect, useCallback } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "@/lib/site-intl";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import { getHeroSection } from "@/sanity/lib/getHeroSection";
-import { urlFor } from "@/sanity/lib/image";
+import { getHeroSection, urlFor } from "@/lib/site-data";
 import { Link } from "@/navigation";
 
 const fallbackImages = ["/hero1.jpg", "/hero2.jpg", "/hero3.jpg"];  

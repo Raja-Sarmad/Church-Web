@@ -1,13 +1,11 @@
 "use client";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
-import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 import { Link } from "@/navigation";
-import { getVolunteerCtaSection } from "@/sanity/lib/getVolunteerCtaSection";
-import { urlFor } from "@/sanity/lib/image";
+import { getVolunteerCtaSection, urlFor } from "@/lib/site-data";
 
 type VolunteerCtaSectionProps = {
   locale: string;
@@ -21,7 +19,7 @@ const VolunteerCtaSection = ({ locale }: VolunteerCtaSectionProps) => {
       description: string;
       buttonLabel: string;
       href: string;
-      image?: SanityImageSource;
+      image?: string | { asset?: { url?: string } };
       overlayColor?: string;
     }>;
   };

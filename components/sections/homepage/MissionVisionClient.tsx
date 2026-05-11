@@ -1,11 +1,11 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/site-intl";
 import { motion } from "framer-motion";
 import { Rocket, Eye, ArrowRight, Target } from "lucide-react";
-import { urlFor } from "@/sanity/lib/image";
+import { urlFor } from "@/lib/site-data";
 import { Link } from "@/navigation";
-import type { MissionVisionData } from "@/sanity/lib/getMissionVision";
+type MissionVisionData = any;
 
 type MissionVisionClientProps = {
   locale: string;

@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/site-intl";
 import { useEffect, useState } from "react";
 
 type InitialPageLoaderProps = {

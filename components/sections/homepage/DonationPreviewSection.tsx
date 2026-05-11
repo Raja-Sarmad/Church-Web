@@ -48,7 +48,7 @@ const DonationPreviewSection = ({ locale }: { locale: string }) => {
             </Link>
           ))}
         </div>
-        {isLoading && <p className="text-center mt-4">Loading from Sanity...</p>}
+        {isLoading && <p className="text-center mt-4">Loading...</p>}
       </div>
     </section>
   );

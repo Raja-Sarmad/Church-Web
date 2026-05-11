@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { getProjects } from "@/sanity/lib/getProjects";
+import { getProjects } from "@/lib/site-data";
 
 export const dynamic = "force-dynamic";
 

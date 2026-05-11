@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "@/lib/site-intl";
 import { Link } from "@/navigation";
 import { rtlLocales, type Locale } from "@/i18n";
 import {

@@ -1,30 +1,27 @@
-import { redirect } from "next/navigation";
-import { headers } from "next/headers";
+import AboutSection from "@/components/sections/homepage/AboutSection";
+import AreasOfWorkSection from "@/components/sections/homepage/AreasofWorkSection";
+import Blog from "@/components/sections/homepage/Blog";
+import Hero from "@/components/sections/homepage/Hero";
+import MissionVision from "@/components/sections/homepage/MissionVision";
+import ContactSection from "@/components/sections/homepage/ContactSection";
+import DonationPreviewSection from "@/components/sections/homepage/DonationPreviewSection";
+import VolunteerCtaSection from "@/components/sections/homepage/VolunteerCtaSection";
+import GallerySliderSection from "@/components/sections/homepage/GallerySliderSection";
 
-import { defaultLocale } from "@/i18n";
+export default function Home() {
+  const locale = "en";
 
-function resolveLocaleFromAcceptLanguage(acceptLanguage: string | null) {
-  if (!acceptLanguage) return defaultLocale;
-
-  const languageTokens = acceptLanguage
-    .split(",")
-    .map((entry) => entry.trim().split(";")[0]?.toLowerCase())
-    .filter(Boolean);
-
-  for (const token of languageTokens) {
-    if (token === "ar" || token.startsWith("ar-")) return "ar";
-    if (token === "tr" || token.startsWith("tr-")) return "tr";
-    if (token === "en" || token.startsWith("en-")) return "en";
-  }
-
-  return defaultLocale;
-}
-
-export default async function RootPage() {
-  const requestHeaders = await headers();
-  const locale = resolveLocaleFromAcceptLanguage(
-    requestHeaders.get("accept-language")
+  return (
+    <main>
+      <Hero locale={locale} />
+      <AboutSection locale={locale} />
+      <MissionVision locale={locale} />
+      <VolunteerCtaSection locale={locale} />
+      <DonationPreviewSection locale={locale} />
+      <AreasOfWorkSection />
+      <Blog locale={locale} />
+      <ContactSection locale={locale} />
+      <GallerySliderSection />
+    </main>
   );
-
-  redirect(`/${locale}`);
 }

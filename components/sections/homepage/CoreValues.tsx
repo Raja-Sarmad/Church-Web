@@ -4,10 +4,9 @@ import React from "react";
 import { Link } from "@/navigation";
 import { motion } from "framer-motion";
 import { HeartHandshake, ShieldCheck, Scale, Rocket } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
-import { getCoreValues } from "@/sanity/lib/getCoreValues";
-import { urlFor } from "@/sanity/lib/image";
+import { getCoreValues, urlFor } from "@/lib/site-data";
 
 const iconStyles = [
   {

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "@/lib/site-intl";
 import { Mail, MapPin, Twitter, Facebook, Instagram } from "lucide-react";
 
 const TopBar = () => {

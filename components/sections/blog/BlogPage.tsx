@@ -3,12 +3,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { getBlogPosts } from "@/sanity/lib/getBlogPosts";
-import { getBlogSection } from "@/sanity/lib/getBlogSection";
-import { urlFor } from "@/sanity/lib/image";
+import { getBlogPosts, getBlogSection, urlFor } from "@/lib/site-data";
 import { Link } from "@/navigation";
 import { COLORS } from "@/lib/constants/colors";
 

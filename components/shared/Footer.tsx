@@ -12,9 +12,9 @@ import {
   MapPin,
 } from "lucide-react";
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
-import { getFooterSection } from "@/sanity/lib/getFooterSection";
+import { getFooterSection } from "@/lib/site-data";
 const Footer = () => {
   const locale = useLocale();
   const isArabic = locale === "ar";

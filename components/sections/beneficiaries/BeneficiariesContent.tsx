@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { Link } from "@/navigation";
-import { getServicePageCta } from "@/sanity/lib/getServicePageCta";
+import { getServicePageCta } from "@/lib/site-data";
 
 type BeneficiariesContentProps = {
   locale: string;
