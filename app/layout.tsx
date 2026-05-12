@@ -2,11 +2,8 @@ import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Cairo, Caveat, Nunito, Figtree } from "next/font/google";
-import InitialPageLoader from "@/components/shared/InitialPageLoader";
+import AppShell from "@/components/shared/AppShell";
 import QueryProvider from "@/components/shared/QueryProvider";
-import Footer from "@/components/shared/Footer";
-import Header from "@/components/shared/Header";
-import CustomCursor from "@/components/shared/CustomCursor";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -44,12 +41,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <QueryProvider>
-          <InitialPageLoader>
-            <CustomCursor />
-            <Header />
-            {children}
-            <Footer />
-          </InitialPageLoader>
+          <AppShell>{children}</AppShell>
         </QueryProvider>
       </body>
     </html>

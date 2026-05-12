@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import { useLocale, useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
-import { getFooterSection } from "@/lib/site-data";
+import { getSiteSettings, urlFor } from "@/lib/sanity-site-data";
 const Footer = () => {
   const locale = useLocale();
   const isArabic = locale === "ar";
@@ -22,9 +22,10 @@ const Footer = () => {
   const tNavbar = useTranslations("Navbar");
   const tPages = useTranslations("Pages");
   const { data } = useQuery({
-    queryKey: ["footerSection", locale],
-    queryFn: () => getFooterSection(locale),
+    queryKey: ["siteSettings", locale],
+    queryFn: () => getSiteSettings(),
   });
+  const footer = data?.footer;
   const quickLinks = [
     { hash: "home", label: tNavbar("home") },
     { hash: "programs", label: tNavbar("areaOfWork") },
@@ -35,7 +36,7 @@ const Footer = () => {
     { hash: "contact", label: tNavbar("contact") },
   ];
 
-  const socialLinks = [
+  const fallbackSocialLinks = [
     {
       href: isArabic
         ? "https://www.facebook.com/UmutKopruleriAr/"
@@ -66,9 +67,9 @@ const Footer = () => {
     },
   ];
 
-  const emailVal = data?.email ?? tFooter("email");
-  const phoneVal = data?.phone ?? tFooter("phone");
-  const addressVal = data?.address ?? tFooter("address");
+  const emailVal = footer?.email ?? tFooter("email");
+  const phoneVal = footer?.phone ?? tFooter("phone");
+  const addressVal = footer?.address ?? tFooter("address");
 
   const contactItems = [
     { icon: Mail, value: emailVal, href: `mailto:${emailVal}`, dir: undefined },
@@ -85,6 +86,9 @@ const Footer = () => {
       dir: undefined,
     },
   ];
+
+  const resolvedSocialLinks =
+    footer?.socialLinks?.length ? footer.socialLinks : fallbackSocialLinks;
 
   return (
     <footer className="relative bg-secondary/90 pt-16 pb-8 overflow-hidden text-white/80">
@@ -106,11 +110,16 @@ const Footer = () => {
               href="/"
               className="flex items-center gap-2 group bg-white rounded-full cursor-pointer w-fit"
             >
-              <Image src="/logo.png" width={100} alt="Logo" height={100} />
+              <Image
+                src={data?.logo ? urlFor(data.logo).width(200).quality(90).url() : "/logo.png"}
+                width={100}
+                alt="Logo"
+                height={100}
+              />
             </Link>
 
             <p className="text-[14px] leading-relaxed text-white/50 font-medium max-w-sm">
-              {data?.aboutText ?? tFooter("aboutText")}
+              {footer?.aboutText ?? tFooter("aboutText")}
             </p>
             <Link
               href="/donate"
@@ -121,14 +130,14 @@ const Footer = () => {
             <div className="mt-4 flex w-full max-w-sm flex-col gap-3 sm:flex-row">
               <input
                 type="email"
-                placeholder="Email address"
+                placeholder={footer?.newsletterPlaceholder ?? "Email address"}
                 className="w-full rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white placeholder:text-white/50 focus:border-primary focus:outline-none"
               />
               <button
                 type="button"
                 className="w-full rounded-full bg-primary px-5 py-3 text-sm font-bold text-white transition-all hover:bg-primary/90 sm:w-auto"
               >
-                Subscribe
+                {footer?.newsletterButtonLabel ?? "Subscribe"}
               </button>
             </div>
           </div>
@@ -136,7 +145,7 @@ const Footer = () => {
           {/* Column 2: Quick Links */}
           <div className="flex flex-col gap-6">
             <h3 className="text-white text-xl font-black font-cairo tracking-tight uppercase">
-              {data?.quickLinks ?? tFooter("quickLinks")}
+              {footer?.quickLinksTitle ?? tFooter("quickLinks")}
             </h3>
             <div className="flex flex-col gap-3 text-sm font-bold text-white/70">
               {quickLinks.map((link) => {
@@ -168,7 +177,7 @@ const Footer = () => {
           {/* Column 3: Social Links */}
           <div className="flex flex-col gap-6">
             <h3 className="text-white text-xl font-black font-cairo tracking-tight uppercase">
-              {data?.contactUs ?? tFooter("contactUs")}
+              {footer?.contactTitle ?? tFooter("contactUs")}
             </h3>
             <div className="flex flex-col gap-4 text-sm font-bold text-white/70">
               <div className="flex flex-col gap-2.5">
@@ -192,8 +201,16 @@ const Footer = () => {
                   );
                 })}
               </div>
-              {socialLinks.map((link) => {
-                const Icon = link.icon;
+              {resolvedSocialLinks.map((link: any) => {
+                const Icon =
+                  link.icon ??
+                  link.platform === "facebook"
+                    ? Facebook
+                    : link.platform === "instagram"
+                      ? Instagram
+                      : link.platform === "youtube"
+                        ? Youtube
+                        : TwitterIcon;
                 return (
                   <Link
                     key={link.href}
@@ -216,7 +233,7 @@ const Footer = () => {
         {/* Copyright Area */}
         <div className="mt-14 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-[13px] font-bold text-white/30 font-nunito">
-            {data?.rights ?? tFooter("rights")}
+            {footer?.rights ?? tFooter("rights")}
           </p>
           <span className="text-[11px] font-black uppercase tracking-[0.15em] text-white/50">
             @umutkopruleri

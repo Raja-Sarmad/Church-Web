@@ -1,7 +1,7 @@
 import GalleryGrid from "@/components/sections/gallery/GalleryGrid";
 import PageHero from "@/components/shared/PageHero";
 import { mapGalleryItemsWithSlug } from "@/lib/gallery";
-import { getGalleryPage } from "@/lib/site-data";
+import { getGalleryPage } from "@/lib/sanity-site-data";
 import { createTranslator } from "@/lib/site-intl-core";
 
 export default async function GalleryPage() {

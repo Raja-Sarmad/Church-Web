@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { Link } from "@/navigation";
-import { getBlogPostBySlug } from "@/lib/site-data";
+import { getBlogPostBySlug, urlFor } from "@/lib/sanity-site-data";
 import PageHero from "@/components/shared/PageHero";
 import RichText from "@/components/ui/RichText";
 import { createTranslator } from "@/lib/site-intl-core";
@@ -57,7 +57,7 @@ export default async function BlogDetailPage({
         {post.image ? (
           <div className="mt-10 overflow-hidden rounded-3xl">
             <img
-              src={post.image}
+              src={urlFor(post.image).width(1600).quality(90).url()}
               alt={post.title ?? "Blog image"}
               className="w-full h-[420px] object-cover"
             />

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale, useTranslations } from "@/lib/site-intl";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "@/navigation";
 import { rtlLocales, type Locale } from "@/i18n";
 import {
@@ -34,6 +35,7 @@ import {
   Info,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { getAreasOfWorkSection } from "@/lib/sanity-site-data";
 
 // Color Palette
 const THEME = {
@@ -293,6 +295,10 @@ const AreasOfWorkSection = () => {
   const t = useTranslations("AreasOfWorkSection");
   const locale = useLocale() as Locale;
   const isRtl = rtlLocales.includes(locale);
+  const { data } = useQuery({
+    queryKey: ["areasOfWorkSection", locale],
+    queryFn: () => getAreasOfWorkSection(),
+  });
 
   // Logic for icon mapping (remains similar to original for functionality)
   const pillarIcons = [Heart, Stethoscope, GraduationCap, HandHeart];
@@ -303,7 +309,7 @@ const AreasOfWorkSection = () => {
     [Utensils, Droplet, Home, Hammer],
   ];
 
-  const pillarsData = t.raw("pillars") as any[];
+  const pillarsData = (data?.pillars?.length ? data.pillars : t.raw("pillars")) as any[];
   const areasOfWork = pillarsData.map((p, i) => ({
     ...p,
     icon: pillarIcons[i],
@@ -340,7 +346,7 @@ const AreasOfWorkSection = () => {
                 className="h-[1px] bg-primary"
               />
               <span className="text-xs font-bold uppercase tracking-[0.4em] text-primary">
-                {t("label")}
+                {data?.label ?? t("label")}
               </span>
             </motion.div>
 
@@ -356,17 +362,7 @@ const AreasOfWorkSection = () => {
               className="text-5xl md:text-6xl font-bold leading-[0.95] tracking-tighter"
               style={{ color: THEME.dark }}
             >
-              {t.rich("title", {
-                outline: (chunks) => (
-                  <span
-                    className="text-transparent font-outline-1"
-                    style={{ WebkitTextStroke: `1px ${THEME.dark}` }}
-                  >
-                    {chunks}
-                  </span>
-                ),
-                br: () => <br className="hidden lg:block" />,
-              })}
+              {data?.title ?? t("title")}
             </motion.h2>
           </div>
 
@@ -381,7 +377,7 @@ const AreasOfWorkSection = () => {
             }}
             className="lg:max-w-xl 2xl:max-w-3xl max-w-xl text-slate-500 text-sm border-l border-slate-200 pl-8"
           >
-            {t("summary")}
+            {data?.summary ?? t("summary")}
           </motion.p>
         </div>
 
@@ -391,7 +387,7 @@ const AreasOfWorkSection = () => {
             <WorkCard
               key={index}
               pillar={pillar}
-              keyProgramsLabel={t("keyPrograms")}
+              keyProgramsLabel={data?.keyPrograms ?? t("keyPrograms")}
               isRtl={isRtl}
               index={index}
             />
@@ -420,9 +416,11 @@ const AreasOfWorkSection = () => {
             className="relative z-10"
           >
             <h3 className="text-3xl md:text-2xl 2xl:text-3xl font-bold text-white tracking-tight">
-              {t("cta.title")}
+              {data?.cta?.title ?? t("cta.title")}
             </h3>
-            <p className="text-white/50 text-md">{t("cta.description")}</p>
+            <p className="text-white/50 text-md">
+              {data?.cta?.description ?? t("cta.description")}
+            </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -436,7 +434,7 @@ const AreasOfWorkSection = () => {
               href="/donate"
               className="relative z-10 mt-10 shrink-0 rounded-full bg-primary px-12 py-6 text-sm font-black uppercase tracking-[0.2em] text-white transition-all hover:bg-white hover:text-primary lg:mt-0 inline-block"
             >
-              {t("cta.button")}
+              {data?.cta?.button ?? t("cta.button")}
             </Link>
           </motion.div>
 

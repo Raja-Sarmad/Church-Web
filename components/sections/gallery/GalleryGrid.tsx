@@ -1,5 +1,5 @@
 import { Link } from "@/navigation";
-import { urlFor } from "@/lib/site-data";
+import { urlFor } from "@/lib/sanity-site-data";
 
 type GalleryItem = {
   title: string;

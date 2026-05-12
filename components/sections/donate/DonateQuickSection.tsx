@@ -5,7 +5,7 @@ import { ArrowRight, ChevronRight, MessageCircle, X } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchDonateQuickPage } from "@/lib/api/campaigns";
-import { urlFor } from "@/lib/site-data";
+import { urlFor } from "@/lib/sanity-site-data";
 
 type DonateQuickSectionProps = {
   locale: string;

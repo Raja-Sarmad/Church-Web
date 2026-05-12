@@ -6,6 +6,7 @@ import DonationPreviewSection from "@/components/sections/homepage/DonationPrevi
 import MissionVision from "@/components/sections/homepage/MissionVision";
 import Blog from "@/components/sections/homepage/Blog";
 import GallerySliderSection from "@/components/sections/homepage/GallerySliderSection";
+import { getAboutPage, urlFor } from "@/lib/sanity-site-data";
 import { createTranslator } from "@/lib/site-intl-core";
 
 const renderHighlight = (value?: string) => {
@@ -35,22 +36,24 @@ const renderHighlight = (value?: string) => {
 
 export default async function AboutPage() {
   const nav = createTranslator("Navbar");
-  const tPages = createTranslator("Pages");
-  const content = tPages.raw("aboutPage");
+  const content = await getAboutPage();
   const locale = "en";
+  const imageUrl = content.image
+    ? urlFor(content.image).width(1600).quality(90).url()
+    : "/hero-3.webp";
 
   const featureItems = [
     {
-      title: content.features.teamTitle,
-      description: content.features.teamDescription,
+      title: content.features?.[0]?.title,
+      description: content.features?.[0]?.description,
       color: "text-amber-500",
     },
     {
-      title: content.features.fundraiseTitle,
-      description: content.features.fundraiseDescription,
+      title: content.features?.[1]?.title,
+      description: content.features?.[1]?.description,
       color: "text-primary",
     },
-  ];
+  ].filter((item) => item.title && item.description);
 
   return (
     <main className="bg-white">
@@ -60,7 +63,7 @@ export default async function AboutPage() {
         <div className="container mx-auto px-4 max-w-6xl grid gap-12 lg:grid-cols-[1fr_1fr] items-center">
           <div className="relative overflow-hidden rounded-[2.5rem] shadow-xl">
             <Image
-              src="/hero-3.webp"
+              src={imageUrl}
               alt={content.imageAlt}
               width={1501}
               height={661}

@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react";
 
 import { Link } from "@/navigation";
+import { getSiteSettings, urlFor } from "@/lib/sanity-site-data";
 
 type PageHeroProps = {
   title: string;
@@ -8,19 +9,29 @@ type PageHeroProps = {
   homeLabel?: string;
 };
 
-const PageHero = ({
+const PageHero = async ({
   title,
   breadcrumbLabel,
   homeLabel = "Home",
 }: PageHeroProps) => {
+  const settings = await getSiteSettings();
+  const backgroundImage = settings.pageHero?.backgroundImage
+    ? urlFor(settings.pageHero.backgroundImage).width(2000).quality(90).url()
+    : "/hero-1.webp";
+  const overlayImage = settings.pageHero?.overlayImage
+    ? urlFor(settings.pageHero.overlayImage).width(1200).quality(90).url()
+    : "/hero-bottom-right.webp";
+  const maskImage = settings.pageHero?.maskImage
+    ? urlFor(settings.pageHero.maskImage).width(1200).quality(90).url()
+    : "/download.png";
   const currentLabel = breadcrumbLabel ?? title;
 
   return (
     <section
       className="relative w-full min-h-[40vh] lg:min-h-[75vh] flex items-center bg-[#092a24] text-white overflow-hidden"
       style={{
-        WebkitMaskImage: "url('/download.png')",
-        maskImage: "url('/download.png')",
+        WebkitMaskImage: `url('${maskImage}')`,
+        maskImage: `url('${maskImage}')`,
         WebkitMaskRepeat: "no-repeat",
         maskRepeat: "no-repeat",
         WebkitMaskPosition: "center",
@@ -32,19 +43,19 @@ const PageHero = ({
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center grayscale opacity-20"
-          style={{ backgroundImage: "url('/hero-1.webp')" }}
+          style={{ backgroundImage: `url('${backgroundImage}')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-tr from-[#092a24]/70 via-[#092a24]/40 to-transparent" />
         <div
           className="absolute  inset-0 bg-cover bg-no-repeat bg-center grayscale opacity-10"
-          style={{ backgroundImage: "url('/hero-bottom-right.webp')" }}
+          style={{ backgroundImage: `url('${overlayImage}')` }}
         />
       </div>
 
       <div className="absolute -bottom-50 -right-16 w-[520px] h-[520px] opacity-70 hidden lg:block animate-dance">
         <div
           className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/hero-bottom-right.webp')" }}
+          style={{ backgroundImage: `url('${overlayImage}')` }}
         />
       </div>
       <div className="absolute -bottom-16 left-0 w-[720px] h-[220px] opacity-20 hidden xl:block animate-dance-slow">

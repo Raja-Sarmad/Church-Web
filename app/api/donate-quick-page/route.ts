@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import { getDonateQuickPage } from "@/lib/site-data";
+import { getDonateQuickPage } from "@/lib/sanity-site-data";
 
 export const dynamic = "force-dynamic";
 

@@ -5,7 +5,7 @@ import { useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
 
 import { Link } from "@/navigation";
-import { getVolunteerCtaSection, urlFor } from "@/lib/site-data";
+import { getVolunteerCtaSection, urlFor } from "@/lib/sanity-site-data";
 
 type VolunteerCtaSectionProps = {
   locale: string;

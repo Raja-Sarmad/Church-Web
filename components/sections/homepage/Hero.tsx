@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "@/lib/site-intl";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useQuery } from "@tanstack/react-query";
-import { getHeroSection, urlFor } from "@/lib/site-data";
+import { getHeroSection, urlFor } from "@/lib/sanity-site-data";
 import { Link } from "@/navigation";
 
 const fallbackImages = ["/hero1.jpg", "/hero2.jpg", "/hero3.jpg"];  

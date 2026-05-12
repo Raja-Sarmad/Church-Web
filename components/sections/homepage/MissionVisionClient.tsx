@@ -3,7 +3,7 @@
 import { useTranslations } from "@/lib/site-intl";
 import { motion } from "framer-motion";
 import { Rocket, Eye, ArrowRight, Target } from "lucide-react";
-import { urlFor } from "@/lib/site-data";
+import { urlFor } from "@/lib/sanity-site-data";
 import { Link } from "@/navigation";
 type MissionVisionData = any;
 

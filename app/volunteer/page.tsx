@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import PageHero from "@/components/shared/PageHero";
-import { getVolunteerPage } from "@/lib/site-data";
+import { getVolunteerPage } from "@/lib/sanity-site-data";
 import { createTranslator } from "@/lib/site-intl-core";
 
 export default async function VolunteerPage() {

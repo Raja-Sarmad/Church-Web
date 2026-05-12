@@ -5,11 +5,16 @@ import DonationCard from "@/components/ui/DonationCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Link } from "@/navigation";
 import { fetchCampaigns } from "@/lib/api/campaigns";
+import { getDonationPreviewSection } from "@/lib/sanity-site-data";
 
 const DonationPreviewSection = ({ locale }: { locale: string }) => {
   const { data: apiData, isLoading } = useQuery({
     queryKey: ["donationPosts", locale],
     queryFn: () => fetchCampaigns(locale),
+  });
+  const { data: sectionData } = useQuery({
+    queryKey: ["donationPreviewSection", locale],
+    queryFn: () => getDonationPreviewSection(),
   });
 
   // AGAR API KHALI HAI TO YE DUMMY DATA DIKHAYE GA (TESTING KE LIYE)
@@ -29,7 +34,11 @@ const DonationPreviewSection = ({ locale }: { locale: string }) => {
   return (
     <section className="bg-white py-16">
       <div className="container mx-auto px-4">
-        <SectionHeading title="Special Missions" subtitle="Support a Cause" centered />
+        <SectionHeading
+          title={sectionData?.title || "Special Missions"}
+          subtitle={sectionData?.subtitle || "Support a Cause"}
+          centered
+        />
         
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
           {donationPosts.map((item: any, index: number) => (

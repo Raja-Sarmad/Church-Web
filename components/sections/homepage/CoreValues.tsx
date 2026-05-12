@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { HeartHandshake, ShieldCheck, Scale, Rocket } from "lucide-react";
 import { useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
-import { getCoreValues, urlFor } from "@/lib/site-data";
+import { getCoreValues, urlFor } from "@/lib/sanity-site-data";
 
 const iconStyles = [
   {

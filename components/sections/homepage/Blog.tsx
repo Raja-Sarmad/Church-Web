@@ -7,7 +7,7 @@ import { User, MessageCircle, ArrowRight, Calendar } from "lucide-react";
 import { useTranslations } from "@/lib/site-intl";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { useQuery } from "@tanstack/react-query";
-import { getBlogSection, getBlogPosts, urlFor } from "@/lib/site-data";
+import { getBlogSection, getBlogPosts, urlFor } from "@/lib/sanity-site-data";
 import { COLORS } from "@/lib/constants/colors";
 
 const fallbackImages = [

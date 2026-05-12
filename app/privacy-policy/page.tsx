@@ -1,5 +1,5 @@
 import PageHero from "@/components/shared/PageHero";
-import { getPrivacyPolicy } from "@/lib/site-data";
+import { getPrivacyPolicy } from "@/lib/sanity-site-data";
 import { createTranslator } from "@/lib/site-intl-core";
 
 export default async function PrivacyPolicyPage() {

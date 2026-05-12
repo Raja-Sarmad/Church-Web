@@ -6,7 +6,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { getBlogPosts, getBlogSection, urlFor } from "@/lib/site-data";
+import { getBlogPosts, getBlogSection, urlFor } from "@/lib/sanity-site-data";
 import { Link } from "@/navigation";
 import { COLORS } from "@/lib/constants/colors";
 

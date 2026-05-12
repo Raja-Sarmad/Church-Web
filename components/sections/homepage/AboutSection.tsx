@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Link } from "@/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { getAboutSection, urlFor } from "@/lib/site-data";
+import { getAboutSection, urlFor } from "@/lib/sanity-site-data";
 
 const AboutSection = ({ locale }: { locale: string }) => {
   const t = useTranslations("AboutSection");

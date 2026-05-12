@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 
 import PageHero from "@/components/shared/PageHero";
-import { getProjectBySlug } from "@/lib/site-data";
+import { getProjectBySlug, urlFor } from "@/lib/sanity-site-data";
 import { createTranslator } from "@/lib/site-intl-core";
 
 export default async function ProjectDetailPage({
@@ -28,7 +28,7 @@ export default async function ProjectDetailPage({
           <div className="lg:w-2/3">
             <div className="relative w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden mb-8">
               <img
-                src={project.image}
+                src={urlFor(project.image).width(1600).quality(90).url()}
                 alt={project.title}
                 className="w-full h-full object-cover"
               />
@@ -120,13 +120,13 @@ export default async function ProjectDetailPage({
           </div>
 
           <div className="lg:w-1/3 space-y-6">
-            {project.gallery.map((image: string, index: number) => (
+            {project.gallery.map((image: any, index: number) => (
               <div
                 key={index}
                 className="relative h-64 rounded-3xl overflow-hidden group"
               >
                 <img
-                  src={image}
+                  src={urlFor(image).width(1200).quality(90).url()}
                   alt={`Project image ${index + 1}`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

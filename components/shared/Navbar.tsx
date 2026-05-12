@@ -9,14 +9,20 @@ import {
   ArrowRight,
   X,
 } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
 // import LanguageSwitcher from "./LanguageSwitcher";
 import { Link, usePathname } from "@/navigation";
 import Image from "next/image";
+import { getSiteSettings, urlFor } from "@/lib/sanity-site-data";
 
 const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
   const locale = useLocale();
   const isRtl = locale === "ar";
   const t = useTranslations("Navbar");
+  const { data: settings } = useQuery({
+    queryKey: ["siteSettings", locale],
+    queryFn: () => getSiteSettings(),
+  });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [activeHash, setActiveHash] = useState<string>("");
@@ -125,7 +131,7 @@ const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
           className="flex rounded-full items-center gap-2 group cursor-pointer"
         >
           <Image
-            src="/logo3.jpeg"
+            src={settings?.logo ? urlFor(settings.logo).width(180).quality(90).url() : "/logo3.jpeg"}
             alt="logo"
             width={90}
             height={90}
@@ -262,7 +268,7 @@ const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
             className="hidden cursor-pointer lg:flex items-center gap-4 bg-white/5 border border-white/10 hover:border-primary px-7 py-2 rounded-full transition-all group relative overflow-hidden"
           >
             <span className="font-extrabold text-[13px]  relative z-10 transition-colors group-hover:text-white">
-              {t("donateNow")}
+              {settings?.donationButtonLabel ?? t("donateNow")}
             </span>
             <div className="size-6  bg-primary rounded-full flex items-center justify-center -mr-3 relative z-10 group-hover:scale-110 transition-transform shadow-lg">
               {isRtl ? (
@@ -285,7 +291,7 @@ const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
               className="flexrounded-full items-center cursor-pointer"
             >
               <Image
-                src="/logo3.jpeg"
+                src={settings?.logo ? urlFor(settings.logo).width(100).quality(90).url() : "/logo3.jpeg"}
                 alt="logo"
                 width={50}
                 height={50}
@@ -329,9 +335,6 @@ const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
             })}
           </nav>
 
-          <div className="px-6 pb-6">
-            <LanguageSwitcher className="block" />
-          </div>
         </div>
       ) : null}
     </header>

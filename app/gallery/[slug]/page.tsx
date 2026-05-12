@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import PageHero from "@/components/shared/PageHero";
 import { mapGalleryItemsWithSlug } from "@/lib/gallery";
-import { getGalleryPage } from "@/lib/site-data";
+import { getGalleryPage, urlFor } from "@/lib/sanity-site-data";
 import { createTranslator } from "@/lib/site-intl-core";
 
 export default async function GalleryDetailPage({
@@ -50,7 +50,7 @@ export default async function GalleryDetailPage({
           {activeItem.heroImage ? (
             <div className="overflow-hidden rounded-3xl border border-white/70 bg-white shadow-sm">
               <img
-                src={String(activeItem.heroImage)}
+                src={urlFor(activeItem.heroImage).width(1600).quality(90).url()}
                 alt={activeItem.title}
                 className="h-72 w-full object-cover"
                 loading="lazy"
@@ -59,13 +59,13 @@ export default async function GalleryDetailPage({
           ) : null}
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {galleryImages.map((image, index) => (
+            {galleryImages.map((image: any, index) => (
               <div
                 key={`${activeItem.title}-${index}`}
                 className="overflow-hidden rounded-3xl border border-white/70 bg-white shadow-sm"
               >
                 <img
-                  src={String(image)}
+                  src={urlFor(image).width(1200).quality(90).url()}
                   alt={activeItem.title}
                   className="h-64 w-full object-cover"
                   loading="lazy"

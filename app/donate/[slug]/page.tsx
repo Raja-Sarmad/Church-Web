@@ -1,10 +1,16 @@
 import { notFound } from "next/navigation";
 
-import { getDonationPostBySlug, getDonationPosts, getDonateDetail, getDonatePage } from "@/lib/site-data";
+import {
+  getDonationPostBySlug,
+  getDonationPosts,
+  getDonateDetail,
+  getDonatePage,
+} from "@/lib/sanity-site-data";
 import DonateQuickInline from "@/components/sections/donate/DonateQuickInline";
 import PageHero from "@/components/shared/PageHero";
 import { COLORS } from "@/lib/constants/colors";
 import RichText from "@/components/ui/RichText";
+import { urlFor } from "@/lib/sanity-site-data";
 import { createTranslator } from "@/lib/site-intl-core";
 
 export default async function DonateDetailPage({
@@ -79,7 +85,11 @@ export default async function DonateDetailPage({
           <div>
             <div className="overflow-hidden rounded-[2rem] bg-white shadow-[0_20px_50px_rgba(15,23,42,0.08)]">
               <img
-                src={campaign.image ?? "/hero1.jpg"}
+                src={
+                  campaign.image
+                    ? urlFor(campaign.image).width(1600).quality(90).url()
+                    : "/hero1.jpg"
+                }
                 alt={campaign.title}
                 className="h-[320px] w-full object-cover"
               />
@@ -133,10 +143,10 @@ export default async function DonateDetailPage({
             )}
 
             <div className="mt-8 grid gap-6 md:grid-cols-2">
-              {galleryImages.slice(0, 2).map((src: string) => (
+              {galleryImages.slice(0, 2).map((src: any) => (
                 <img
-                  key={src}
-                  src={src}
+                  key={typeof src === "string" ? src : JSON.stringify(src)}
+                  src={urlFor(src).width(1200).quality(90).url()}
                   alt={detail.galleryTitle}
                   className="h-56 w-full rounded-3xl object-cover"
                 />

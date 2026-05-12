@@ -5,7 +5,7 @@ import { useLocale } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
 
 import MaskedGalleryCard from "@/components/ui/MaskedGalleryCard";
-import { getGallerySliderSection, urlFor } from "@/lib/site-data";
+import { getGallerySliderSection, urlFor } from "@/lib/sanity-site-data";
 
 const fallbackItems = [
   {
