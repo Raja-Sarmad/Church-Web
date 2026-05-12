@@ -13,15 +13,22 @@ type VolunteerCtaSectionProps = {
 
 const VolunteerCtaSection = ({ locale }: VolunteerCtaSectionProps) => {
   const tPages = useTranslations("Pages");
-  const content = tPages.raw("homeVolunteer") as {
-    items: Array<{
-      title: string;
-      description: string;
-      buttonLabel: string;
-      href: string;
-      image?: string | { asset?: { url?: string } };
-      overlayColor?: string;
-    }>;
+  const contentRaw = tPages.raw("homeVolunteer") as any;
+  const content = contentRaw?.items ? contentRaw : {
+    items: [
+      {
+        title: "Volunteer With Us",
+        description: "Use your time and gifts in ways that strengthen people and ministry.",
+        buttonLabel: "Join the team",
+        href: "/volunteer",
+      },
+      {
+        title: "Need Support?",
+        description: "Reach out if you or someone you know needs prayer, care, or practical help.",
+        buttonLabel: "Contact us",
+        href: "/contact",
+      },
+    ],
   };
   const { data } = useQuery({
     queryKey: ["volunteerCtaSection", locale],

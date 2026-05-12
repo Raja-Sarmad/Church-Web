@@ -20,6 +20,7 @@ import {
   SITE_SETTINGS_QUERY,
   TERMS_PAGE_QUERY,
   VOLUNTEER_PAGE_QUERY,
+  CONTACT_PAGE_QUERY,
 } from "@/sanity/lib/queries";
 
 const blogPosts = [
@@ -680,8 +681,16 @@ export const getAboutSection = async (_locale = "en") =>
   (await getHomepageData()).aboutSection;
 export const getAreasOfWorkSection = async (_locale = "en") =>
   (await getHomepageData()).areasOfWorkSection;
-export const getContactSection = async (_locale = "en") =>
-  (await getHomepageData()).contactSection;
+export async function getContactSection(_locale = "en") {
+  const data = await safeSanityFetch<any>(CONTACT_PAGE_QUERY);
+  if (data?.contactSection) return data.contactSection;
+  return (await getHomepageData()).contactSection;
+}
+
+export async function getContactPage(_locale = "en") {
+  const data = await safeSanityFetch<any>(CONTACT_PAGE_QUERY);
+  return data ?? { title: "Contact", contactSection: await getContactSection() };
+}
 export const getCoreValues = async (_locale = "en") =>
   (await getHomepageData()).coreValuesSection;
 export const getDonationPreviewSection = async (_locale = "en") =>

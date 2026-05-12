@@ -216,6 +216,22 @@
     "volunteer": {
       "title": "Volunteer With Us",
       "description": "Our volunteers help carry the daily work of care, worship, hospitality, youth ministry, and outreach."
+    },
+    "homeVolunteer": {
+      "items": [
+        {
+          "title": "Volunteer With Us",
+          "description": "Use your time and gifts in ways that strengthen people and ministry.",
+          "buttonLabel": "Join the team",
+          "href": "/volunteer"
+        },
+        {
+          "title": "Need Support?",
+          "description": "Reach out if you or someone you know needs prayer, care, or practical help.",
+          "buttonLabel": "Contact us",
+          "href": "/contact"
+        }
+      ]
     }
   },
   "FeaturedCauseCard": {

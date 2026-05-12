@@ -22,6 +22,7 @@ const SINGLETONS = [
   "donateQuickPage",
   "projectsPage",
   "galleryPage",
+  "contactPage",
 ];
 
 export const structure: StructureResolver = (S) =>
@@ -40,6 +41,9 @@ export const structure: StructureResolver = (S) =>
       singleton(S, "donateQuickPage", "Donate Quick Widget"),
       singleton(S, "projectsPage", "Projects Page"),
       singleton(S, "galleryPage", "Gallery Page"),
+      singleton(S, "contactPage", "Contact Page"),
+      S.divider(),
+      S.documentTypeListItem("page").title("Custom Pages"),
       S.divider(),
       S.documentTypeListItem("campaign").title("Campaigns"),
       S.documentTypeListItem("project").title("Projects"),

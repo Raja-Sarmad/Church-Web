@@ -235,7 +235,9 @@ export const PROJECTS_PAGE_QUERY = defineQuery(`
     cta{
       title,
       description,
-      button
+      button,
+      splashImage,
+      photoImage
     }
   }
 `);
@@ -320,5 +322,12 @@ export const GALLERY_ITEMS_QUERY = defineQuery(`
     description,
     heroImage,
     images
+  }
+`);
+
+export const CONTACT_PAGE_QUERY = defineQuery(`
+  *[_type == "contactPage" && _id == "contactPage"][0]{
+    title,
+    contactSection
   }
 `);

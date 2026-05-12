@@ -12,7 +12,7 @@ export default defineConfig({
   projectId: sanityEnv.projectId || "demo-project",
   dataset: sanityEnv.dataset || "production",
   basePath: "/studio",
-  plugins: [structureTool({ structure }), visionTool()],
+  plugins: [structureTool({ structure })],
   schema: {
     types: schemaTypes,
   },

@@ -58,8 +58,8 @@ const ProjectsGallerySection = ({ locale }: ProjectsGallerySectionProps) => {
     description:
       projectsPageData?.cta?.description ?? donateFallback.cta.description,
     buttonLabel: projectsPageData?.cta?.button ?? donateFallback.cta.buttonLabel,
-    splashImage: donateFallback.cta.splashImage,
-    photoImage: donateFallback.cta.photoImage,
+    splashImage: projectsPageData?.cta?.splashImage ?? donateFallback.cta.splashImage,
+    photoImage: projectsPageData?.cta?.photoImage ?? donateFallback.cta.photoImage,
   };
 
   return (
