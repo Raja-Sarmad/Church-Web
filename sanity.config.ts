@@ -9,7 +9,7 @@ import { structure } from "./sanity/structure";
 export default defineConfig({
   name: "default",
   title: sanityEnv.studioTitle,
-  projectId: sanityEnv.projectId || "demo-project",
+  projectId: sanityEnv.projectId || "dmdxfs7h",
   dataset: sanityEnv.dataset || "production",
   basePath: "/studio",
   plugins: [structureTool({ structure })],

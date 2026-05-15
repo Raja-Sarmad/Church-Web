@@ -6,8 +6,11 @@ const singleton = (
   title: string,
 ) =>
   S.listItem()
+    .id(schemaType)
     .title(title)
     .child(S.document().schemaType(schemaType).documentId(schemaType));
+
+const COLLECTIONS = ["page", "campaign", "project", "post", "galleryAlbum"];
 
 const SINGLETONS = [
   "siteSettings",
@@ -51,6 +54,7 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem("galleryAlbum").title("Gallery Albums"),
       S.divider(),
       ...S.documentTypeListItems().filter(
-        (item) => !SINGLETONS.includes(item.getId() as string),
+        (item) =>
+          ![...SINGLETONS, ...COLLECTIONS].includes(item.getId() as string),
       ),
     ]);
