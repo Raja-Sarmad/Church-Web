@@ -6,7 +6,8 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { getBlogPosts, getBlogSection, urlFor } from "@/lib/sanity-site-data";
+import { fetchBlogPosts, fetchBlogSection } from "@/lib/api/content";
+import { urlFor } from "@/lib/sanity-site-data";
 import { Link } from "@/navigation";
 import { COLORS } from "@/lib/constants/colors";
 
@@ -22,11 +23,11 @@ export default function BlogPage({ locale }: { locale: string }) {
   const t = useTranslations("Blog");
   const { data: sectionData } = useQuery({
     queryKey: ["blogSection", locale],
-    queryFn: () => getBlogSection(locale),
+    queryFn: () => fetchBlogSection(locale),
   });
   const { data: postsData, isLoading: postsLoading } = useQuery({
     queryKey: ["blogPosts", locale],
-    queryFn: () => getBlogPosts(locale),
+    queryFn: () => fetchBlogPosts(locale),
   });
 
   const isLoading = postsLoading;
@@ -118,7 +119,7 @@ export default function BlogPage({ locale }: { locale: string }) {
                   </div>
                 </div>
               ))
-            : posts.map((post, idx) => (
+            : posts.map((post: any, idx: number) => (
                 <motion.article
                   key={`${post.title ?? "post"}-${idx}`}
                   initial={{ opacity: 0, y: 30 }}

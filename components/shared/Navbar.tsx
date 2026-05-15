@@ -13,7 +13,8 @@ import { useQuery } from "@tanstack/react-query";
 // import LanguageSwitcher from "./LanguageSwitcher";
 import { Link, usePathname } from "@/navigation";
 import Image from "next/image";
-import { getSiteSettings, urlFor } from "@/lib/sanity-site-data";
+import { fetchSiteSettings } from "@/lib/api/content";
+import { urlFor } from "@/lib/sanity-site-data";
 
 const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
   const locale = useLocale();
@@ -21,7 +22,7 @@ const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
   const t = useTranslations("Navbar");
   const { data: settings } = useQuery({
     queryKey: ["siteSettings", locale],
-    queryFn: () => getSiteSettings(),
+    queryFn: () => fetchSiteSettings(locale),
   });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);

@@ -5,7 +5,8 @@ import { useLocale } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
 
 import MaskedGalleryCard from "@/components/ui/MaskedGalleryCard";
-import { getGallerySliderSection, urlFor } from "@/lib/sanity-site-data";
+import { fetchHomepageSection } from "@/lib/api/content";
+import { urlFor } from "@/lib/sanity-site-data";
 
 const fallbackItems = [
   {
@@ -44,11 +45,11 @@ const GallerySliderSection = () => {
   const locale = useLocale();
   const { data } = useQuery({
     queryKey: ["gallerySliderSection", locale],
-    queryFn: () => getGallerySliderSection(locale),
+    queryFn: () => fetchHomepageSection("gallerySliderSection", locale),
   });
   const items =
     data?.items?.length
-      ? data.items.map((item, index) => ({
+      ? data.items.map((item: any, index: number) => ({
           imageSrc: item.image
             ? urlFor(item.image).width(1000).quality(80).url()
             : fallbackItems[index % fallbackItems.length].imageSrc,
@@ -76,7 +77,7 @@ const GallerySliderSection = () => {
     <section className="bg-white py-16">
       <div className="px-4">
         <Slider {...settings}>
-          {items.map((item, index) => (
+          {items.map((item: any, index: number) => (
             <div key={`${item.alt}-${index}`} className="w-full h-full px-2">
               <MaskedGalleryCard
                 maskImage={maskImage}

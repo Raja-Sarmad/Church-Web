@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { HeartHandshake, ShieldCheck, Scale, Rocket } from "lucide-react";
 import { useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
-import { getCoreValues, urlFor } from "@/lib/sanity-site-data";
+import { fetchHomepageSection } from "@/lib/api/content";
+import { urlFor } from "@/lib/sanity-site-data";
 
 const iconStyles = [
   {
@@ -31,7 +32,7 @@ const CoreValues = ({ locale }: { locale: string }) => {
   const t = useTranslations("CoreValues");
   const { data } = useQuery({
     queryKey: ["coreValues", locale],
-    queryFn: () => getCoreValues(locale),
+    queryFn: () => fetchHomepageSection("coreValuesSection", locale),
   });
 
   const valuesData = (data?.values?.length

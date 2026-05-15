@@ -4,7 +4,7 @@ import React from "react";
 import { useLocale, useTranslations } from "@/lib/site-intl";
 import { Mail, MapPin, Twitter, Facebook, Instagram } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import { getSiteSettings } from "@/lib/sanity-site-data";
+import { fetchSiteSettings } from "@/lib/api/content";
 
 const TopBar = () => {
   const locale = useLocale();
@@ -12,7 +12,7 @@ const TopBar = () => {
   const t = useTranslations("TopBar");
   const { data } = useQuery({
     queryKey: ["siteSettings", locale],
-    queryFn: () => getSiteSettings(),
+    queryFn: () => fetchSiteSettings(locale),
   });
   const topBar = data?.topBar;
   const socialLinks = topBar?.socialLinks?.length ? topBar.socialLinks : [];

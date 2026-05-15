@@ -186,7 +186,7 @@ export const DONATE_QUICK_PAGE_QUERY = defineQuery(`
 export const CAMPAIGNS_QUERY = defineQuery(`
   *[_type == "campaign"] | order(orderRank asc, _createdAt desc){
     _id,
-    slug,
+    "slug": slug.current,
     category,
     title,
     description,

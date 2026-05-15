@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { Link } from "@/navigation";
-import { getServicePageCta } from "@/lib/sanity-site-data";
+import { fetchBeneficiariesPage } from "@/lib/api/content";
 
 type BeneficiariesContentProps = {
   locale: string;
@@ -12,7 +12,7 @@ type BeneficiariesContentProps = {
 const BeneficiariesContent = ({ locale }: BeneficiariesContentProps) => {
   const { data: ctaData } = useQuery({
     queryKey: ["servicePageCta", locale],
-    queryFn: () => getServicePageCta(locale),
+    queryFn: () => fetchBeneficiariesPage(locale),
   });
 
   return (
@@ -27,7 +27,7 @@ const BeneficiariesContent = ({ locale }: BeneficiariesContentProps) => {
         </h2>
 
         <ul className="mt-4 space-y-3 text-gray-700">
-          {(ctaData?.programItems || []).map((item, index) => (
+          {(ctaData?.programItems || []).map((item: string, index: number) => (
             <li key={`${item}-${index}`} className="leading-relaxed">
               • {item}
             </li>

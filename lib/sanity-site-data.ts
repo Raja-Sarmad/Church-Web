@@ -594,6 +594,48 @@ const asSlug = (value: unknown) =>
       ? String((value as { current?: string }).current || "")
       : "";
 
+const isPlainObject = (value: unknown): value is Record<string, any> =>
+  Boolean(value) &&
+  typeof value === "object" &&
+  !Array.isArray(value) &&
+  !(value instanceof Date);
+
+const hasValue = (value: unknown) =>
+  value !== undefined && value !== null && value !== "";
+
+function withFallback<T>(data: unknown, fallback: T): T {
+  if (!hasValue(data)) return fallback;
+
+  if (Array.isArray(fallback)) {
+    if (!Array.isArray(data) || !data.length) return fallback as T;
+    if (!fallback.length) return data as T;
+
+    return data.map((item, index) =>
+      withFallback(item, fallback[index % fallback.length]),
+    ) as T;
+  }
+
+  if (isPlainObject(fallback)) {
+    const source = isPlainObject(data) ? data : {};
+    const result: Record<string, any> = { ...fallback };
+
+    Object.keys(source).forEach((key) => {
+      const sourceValue = source[key];
+      if (!hasValue(sourceValue)) return;
+      result[key] = key in result ? withFallback(sourceValue, result[key]) : sourceValue;
+    });
+
+    return result as T;
+  }
+
+  return data as T;
+}
+
+const withSlug = <T extends { slug?: unknown }>(item: T) => ({
+  ...item,
+  slug: asSlug(item.slug),
+});
+
 export const urlFor = (source: any) => {
   const resolved =
     typeof source === "string"
@@ -634,47 +676,13 @@ export const urlFor = (source: any) => {
 export async function getSiteSettings(_locale = "en") {
   const data = await safeSanityFetch<any>(SITE_SETTINGS_QUERY);
 
-  return {
-    ...siteSettingsFallback,
-    ...data,
-    topBar: {
-      ...siteSettingsFallback.topBar,
-      ...(data?.topBar ?? {}),
-      socialLinks: data?.topBar?.socialLinks?.length
-        ? data.topBar.socialLinks
-        : siteSettingsFallback.topBar.socialLinks,
-    },
-    footer: {
-      ...siteSettingsFallback.footer,
-      ...(data?.footer ?? {}),
-      socialLinks: data?.footer?.socialLinks?.length
-        ? data.footer.socialLinks
-        : siteSettingsFallback.footer.socialLinks,
-    },
-    pageHero: {
-      ...siteSettingsFallback.pageHero,
-      ...(data?.pageHero ?? {}),
-    },
-  };
+  return withFallback(data, siteSettingsFallback);
 }
 
 export async function getHomepageData(_locale = "en") {
   const data = await safeSanityFetch<any>(HOME_PAGE_QUERY);
 
-  return {
-    ...homeFallback,
-    ...data,
-    heroSection: data?.heroSection ?? homeFallback.heroSection,
-    aboutSection: data?.aboutSection ?? homeFallback.aboutSection,
-    missionVisionSection: data?.missionVisionSection ?? homeFallback.missionVisionSection,
-    volunteerCtaSection: data?.volunteerCtaSection ?? homeFallback.volunteerCtaSection,
-    donationPreviewSection: data?.donationPreviewSection ?? homeFallback.donationPreviewSection,
-    areasOfWorkSection: data?.areasOfWorkSection ?? homeFallback.areasOfWorkSection,
-    blogSection: data?.blogSection ?? homeFallback.blogSection,
-    contactSection: data?.contactSection ?? homeFallback.contactSection,
-    gallerySliderSection: data?.gallerySliderSection ?? homeFallback.gallerySliderSection,
-    coreValuesSection: data?.coreValuesSection ?? homeFallback.coreValuesSection,
-  };
+  return withFallback(data, homeFallback);
 }
 
 export const getAboutSection = async (_locale = "en") =>
@@ -689,7 +697,10 @@ export async function getContactSection(_locale = "en") {
 
 export async function getContactPage(_locale = "en") {
   const data = await safeSanityFetch<any>(CONTACT_PAGE_QUERY);
-  return data ?? { title: "Contact", contactSection: await getContactSection() };
+  return withFallback(data, {
+    title: "Contact",
+    contactSection: await getContactSection(),
+  });
 }
 export const getCoreValues = async (_locale = "en") =>
   (await getHomepageData()).coreValuesSection;
@@ -711,15 +722,17 @@ export async function getBlogSection(_locale = "en") {
 
 export async function getBlogPosts(_locale = "en") {
   const data = await safeSanityFetch<any[]>(BLOG_POSTS_QUERY);
-  return (data?.length ? data : blogPosts).map((post) => ({
-    ...post,
-    slug: post.slug ?? asSlug(post.slug),
-  }));
+  return (data?.length ? data : blogPosts).map((post, index) =>
+    withSlug(withFallback(post, blogPosts[index % blogPosts.length])),
+  );
 }
 
 export async function getBlogPostBySlug(_locale = "en", slug: string) {
   const data = await safeSanityFetch<any>(BLOG_POST_BY_SLUG_QUERY, { slug });
-  if (data) return { ...data, slug: data.slug ?? asSlug(data.slug) };
+  if (data) {
+    const fallback = blogPosts.find((post) => post.slug === slug) ?? blogPosts[0];
+    return withSlug(withFallback(data, fallback));
+  }
   return blogPosts.find((post) => post.slug === slug) ?? null;
 }
 
@@ -746,42 +759,33 @@ export async function getDonateDetail(_locale = "en") {
 export async function getDonatePage(_locale = "en") {
   const data = await safeSanityFetch<any>(DONATE_PAGE_QUERY);
   return {
-    ...donatePageFallback,
-    ...data,
+    ...withFallback(data, donatePageFallback),
     campaigns: {
-      ...donatePageFallback.campaigns,
-      ...(data?.campaigns ?? {}),
+      ...withFallback(data?.campaigns, donatePageFallback.campaigns),
       items: await getDonationPosts(),
-    },
-    cta: {
-      ...donatePageFallback.cta,
-      ...(data?.cta ?? {}),
     },
   };
 }
 
 export async function getDonateQuickPage(_locale = "en") {
   const data = await safeSanityFetch<any>(DONATE_QUICK_PAGE_QUERY);
-  return {
-    ...donateQuickFallback,
-    ...data,
-    paymentMethods: data?.paymentMethods?.length
-      ? data.paymentMethods
-      : donateQuickFallback.paymentMethods,
-  };
+  return withFallback(data, donateQuickFallback);
 }
 
 export async function getDonationPosts(_locale = "en") {
   const data = await safeSanityFetch<any[]>(CAMPAIGNS_QUERY);
-  return (data?.length ? data : donationPosts).map((item) => ({
-    ...item,
-    slug: item.slug ?? asSlug(item.slug),
-  }));
+  return (data?.length ? data : donationPosts).map((item, index) =>
+    withSlug(withFallback(item, donationPosts[index % donationPosts.length])),
+  );
 }
 
 export async function getDonationPostBySlug(_locale = "en", slug: string) {
   const data = await safeSanityFetch<any>(CAMPAIGN_BY_SLUG_QUERY, { slug });
-  if (data) return { ...data, slug: data.slug ?? asSlug(data.slug) };
+  if (data) {
+    const fallback =
+      donationPosts.find((item) => item.slug === slug) ?? donationPosts[0];
+    return withSlug(withFallback(data, fallback));
+  }
   return donationPosts.find((item) => item.slug === slug) ?? null;
 }
 
@@ -793,25 +797,24 @@ export async function getGalleryPage(_locale = "en") {
   const page = await safeSanityFetch<any>(GALLERY_PAGE_QUERY);
   const items = await safeSanityFetch<any[]>(GALLERY_ITEMS_QUERY);
   return {
-    ...(page ?? galleryPageFallback),
-    title: page?.title || galleryPageFallback.title,
-    description: page?.description || galleryPageFallback.description,
-    emptyStateMessage: page?.emptyStateMessage || galleryPageFallback.emptyStateMessage,
-    items: (items?.length ? items : galleryItems).map((item) => ({
-      ...item,
-      slug: item.slug ?? asSlug(item.slug),
-    })),
+    ...withFallback(page, galleryPageFallback),
+    items: (items?.length ? items : galleryItems).map((item, index) =>
+      withSlug(withFallback(item, galleryItems[index % galleryItems.length])),
+    ),
   };
 }
 
 export async function getPrivacyPolicy(_locale = "en") {
   const data = await safeSanityFetch<any>(PRIVACY_POLICY_QUERY);
-  return data ?? privacyPolicy;
+  return withFallback(data, privacyPolicy);
 }
 
 export async function getProjectBySlug(_locale = "en", slug: string) {
   const data = await safeSanityFetch<any>(PROJECT_BY_SLUG_QUERY, { slug });
-  if (data) return { ...data, slug: data.slug ?? asSlug(data.slug) };
+  if (data) {
+    const fallback = projects.find((project) => project.slug === slug) ?? projects[0];
+    return withSlug(withFallback(data, fallback));
+  }
   return projects.find((project) => project.slug === slug) ?? null;
 }
 
@@ -819,45 +822,37 @@ export const getProjectDetail = async () => null;
 
 export async function getProjects(_locale = "en") {
   const data = await safeSanityFetch<any[]>(PROJECTS_QUERY);
-  return (data?.length ? data : projects).map((item) => ({
-    ...item,
-    slug: item.slug ?? asSlug(item.slug),
-  }));
+  return (data?.length ? data : projects).map((item, index) =>
+    withSlug(withFallback(item, projects[index % projects.length])),
+  );
 }
 
 export async function getProjectsPage(_locale = "en") {
   const data = await safeSanityFetch<any>(PROJECTS_PAGE_QUERY);
-  return {
-    ...projectsPageFallback,
-    ...data,
-    cta: {
-      ...projectsPageFallback.cta,
-      ...(data?.cta ?? {}),
-    },
-  };
+  return withFallback(data, projectsPageFallback);
 }
 
 export async function getServicePageCta(_locale = "en") {
   const data = await safeSanityFetch<any>(BENEFICIARIES_PAGE_QUERY);
-  return data ?? beneficiariesPageFallback;
+  return withFallback(data, beneficiariesPageFallback);
 }
 
 export async function getVolunteerPage(_locale = "en") {
   const data = await safeSanityFetch<any>(VOLUNTEER_PAGE_QUERY);
-  return data ?? volunteerPageFallback;
+  return withFallback(data, volunteerPageFallback);
 }
 
 export async function getAboutPage(_locale = "en") {
   const data = await safeSanityFetch<any>(ABOUT_PAGE_QUERY);
-  return data ?? aboutPageFallback;
+  return withFallback(data, aboutPageFallback);
 }
 
 export async function getImpactPage(_locale = "en") {
   const data = await safeSanityFetch<any>(IMPACT_PAGE_QUERY);
-  return data ?? impactPageFallback;
+  return withFallback(data, impactPageFallback);
 }
 
 export async function getTermsConditionsPage(_locale = "en") {
   const data = await safeSanityFetch<any>(TERMS_PAGE_QUERY);
-  return data ?? termsPageFallback;
+  return withFallback(data, termsPageFallback);
 }

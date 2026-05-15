@@ -14,7 +14,8 @@ import {
 import Image from "next/image";
 import { useLocale, useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
-import { getSiteSettings, urlFor } from "@/lib/sanity-site-data";
+import { fetchSiteSettings } from "@/lib/api/content";
+import { urlFor } from "@/lib/sanity-site-data";
 const Footer = () => {
   const locale = useLocale();
   const isArabic = locale === "ar";
@@ -23,7 +24,7 @@ const Footer = () => {
   const tPages = useTranslations("Pages");
   const { data } = useQuery({
     queryKey: ["siteSettings", locale],
-    queryFn: () => getSiteSettings(),
+    queryFn: () => fetchSiteSettings(locale),
   });
   const footer = data?.footer;
   const quickLinks = [

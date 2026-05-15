@@ -5,7 +5,7 @@ import DonationCard from "@/components/ui/DonationCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Link } from "@/navigation";
 import { fetchCampaigns } from "@/lib/api/campaigns";
-import { getDonationPreviewSection } from "@/lib/sanity-site-data";
+import { fetchHomepageSection } from "@/lib/api/content";
 
 const DonationPreviewSection = ({ locale }: { locale: string }) => {
   const { data: apiData, isLoading } = useQuery({
@@ -14,7 +14,7 @@ const DonationPreviewSection = ({ locale }: { locale: string }) => {
   });
   const { data: sectionData } = useQuery({
     queryKey: ["donationPreviewSection", locale],
-    queryFn: () => getDonationPreviewSection(),
+    queryFn: () => fetchHomepageSection("donationPreviewSection", locale),
   });
 
   // AGAR API KHALI HAI TO YE DUMMY DATA DIKHAYE GA (TESTING KE LIYE)

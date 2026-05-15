@@ -7,7 +7,8 @@ import { User, MessageCircle, ArrowRight, Calendar } from "lucide-react";
 import { useTranslations } from "@/lib/site-intl";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { useQuery } from "@tanstack/react-query";
-import { getBlogSection, getBlogPosts, urlFor } from "@/lib/sanity-site-data";
+import { fetchBlogPosts, fetchBlogSection } from "@/lib/api/content";
+import { urlFor } from "@/lib/sanity-site-data";
 import { COLORS } from "@/lib/constants/colors";
 
 const fallbackImages = [
@@ -22,11 +23,11 @@ export default function Blog({ locale }: { locale: string }) {
   const t = useTranslations("Blog");
   const { data } = useQuery({
     queryKey: ["blogSection", locale],
-    queryFn: () => getBlogSection(locale),
+    queryFn: () => fetchBlogSection(locale),
   });
   const { data: allPosts } = useQuery({
     queryKey: ["blogPosts", locale],
-    queryFn: () => getBlogPosts(locale),
+    queryFn: () => fetchBlogPosts(locale),
   });
 
   const blogPosts = (

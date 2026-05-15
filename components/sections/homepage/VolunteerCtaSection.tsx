@@ -5,7 +5,8 @@ import { useTranslations } from "@/lib/site-intl";
 import { useQuery } from "@tanstack/react-query";
 
 import { Link } from "@/navigation";
-import { getVolunteerCtaSection, urlFor } from "@/lib/sanity-site-data";
+import { fetchHomepageSection } from "@/lib/api/content";
+import { urlFor } from "@/lib/sanity-site-data";
 
 type VolunteerCtaSectionProps = {
   locale: string;
@@ -32,7 +33,7 @@ const VolunteerCtaSection = ({ locale }: VolunteerCtaSectionProps) => {
   };
   const { data } = useQuery({
     queryKey: ["volunteerCtaSection", locale],
-    queryFn: () => getVolunteerCtaSection(locale),
+    queryFn: () => fetchHomepageSection("volunteerCtaSection", locale),
   });
   const isRtl = locale === "ar";
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
@@ -47,7 +48,7 @@ const VolunteerCtaSection = ({ locale }: VolunteerCtaSectionProps) => {
     <section className="bg-white py-16">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid gap-8 lg:grid-cols-2">
-          {items.map((item, index) => {
+          {items.map((item: any, index: number) => {
             const imageUrl = item.image
               ? urlFor(item.image).width(1600).quality(80).url()
               : images[index % images.length];

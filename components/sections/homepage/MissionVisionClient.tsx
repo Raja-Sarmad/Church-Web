@@ -45,7 +45,7 @@ const MissionVisionClient = ({ locale, data }: MissionVisionClientProps) => {
     <section className="relative w-full overflow-hidden bg-white">
       <div className="flex flex-col lg:flex-row min-h-[650px]">
         {/* Left Section: Vision & Target Groups */}
-        <div className="relative w-full lg:w-[32%] bg-green-950 flex flex-col items-center justify-center p-12 lg:p-16 text-center text-white z-10 overflow-hidden">
+        <div className="relative w-full lg:w-[32%] bg-green-900 flex flex-col items-center justify-center p-12 lg:p-16 text-center text-white z-10 overflow-hidden">
           {/* Background Image Layer */}
           <div
             className="absolute inset-0 bg-cover bg-center grayscale opacity-60 mix-blend-overlay pointer-events-none"

@@ -35,7 +35,7 @@ import {
   Info,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { getAreasOfWorkSection } from "@/lib/sanity-site-data";
+import { fetchHomepageSection } from "@/lib/api/content";
 
 // Color Palette
 const THEME = {
@@ -297,7 +297,7 @@ const AreasOfWorkSection = () => {
   const isRtl = rtlLocales.includes(locale);
   const { data } = useQuery({
     queryKey: ["areasOfWorkSection", locale],
-    queryFn: () => getAreasOfWorkSection(),
+    queryFn: () => fetchHomepageSection("areasOfWorkSection", locale),
   });
 
   // Logic for icon mapping (remains similar to original for functionality)

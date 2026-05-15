@@ -6,7 +6,7 @@ import { Send, CheckCircle2, Loader2 } from "lucide-react";
 import { useTranslations } from "@/lib/site-intl";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { useQuery } from "@tanstack/react-query";
-import { getContactSection } from "@/lib/sanity-site-data";
+import { fetchHomepageSection } from "@/lib/api/content";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 const ContactInput = ({ error, className, ...props }: any) => (
@@ -42,7 +42,7 @@ export default function ContactSection({ locale }: { locale: string }) {
   const t = useTranslations("ContactSection");
   const { data } = useQuery({
     queryKey: ["contactSection", locale],
-    queryFn: () => getContactSection(locale),
+    queryFn: () => fetchHomepageSection("contactSection", locale),
   });
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
