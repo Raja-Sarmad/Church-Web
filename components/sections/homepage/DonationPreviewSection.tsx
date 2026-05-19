@@ -40,9 +40,20 @@ const DonationPreviewSection = ({ locale }: { locale: string }) => {
           centered
         />
         
-        <div className="mt-12 grid gap-8 lg:grid-cols-3">
+        <div className="mt-12 grid gap-12 lg:grid-cols-3">
           {donationPosts.map((item: any, index: number) => (
-            <Link key={index} href={`/donate/${item.slug}`} className="block">
+            <Link key={index} href={`/donate/${item.slug}`} className="block ">
+              <DonationCard
+                image={item.image}
+                title={item.title}
+                description={item.description}
+                raised={item.raisedAmount}
+                goal={item.goalAmount}
+                percentage={Math.round((item.raisedAmount / item.goalAmount) * 100)}
+                donateLabel="Donate Now"
+                goalLabel="Goal"
+                formatAmount={(val) => `$${val}`}
+              />
               <DonationCard
                 image={item.image}
                 title={item.title}
