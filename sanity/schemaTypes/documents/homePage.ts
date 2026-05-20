@@ -13,6 +13,7 @@ export const homePage = defineType({
           name: "slides",
           type: "array",
           of: [defineArrayMember({ type: "heroSlide" })],
+          
         }),
       ],
     }),

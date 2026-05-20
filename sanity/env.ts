@@ -1,5 +1,5 @@
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID?.trim() || "";
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET?.trim() || "";
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID?.trim() || "dmdxfs7h";
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET?.trim() || "production";
 
 export const sanityEnv = {
   projectId,

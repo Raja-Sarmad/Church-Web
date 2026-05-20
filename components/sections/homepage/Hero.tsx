@@ -75,13 +75,14 @@ const Hero = ({ locale }: { locale: string }) => {
   }, [t]);
 
   const slides = useMemo(() => {
-    // Debugging: Console check karein agar data nahi aa raha
-    console.log("Sanity Hero Data:", data);
+    // Debugging: Console check
+    console.log("Hero Section Raw Data:", data);
 
-    // Sanity query result handle karna (agar array hai toh pehla element lo)
+    // Sanity query result handle karna
     const sanityData = Array.isArray(data) ? data[0] : data;
     const sanitySlides = sanityData?.slides;
 
+    // Loading or Error state or No Data -> fallback to translations-based slides
     if (!sanitySlides || sanitySlides.length === 0 || isError) {
       return fallbackSlides;
     }
@@ -91,7 +92,7 @@ const Hero = ({ locale }: { locale: string }) => {
       
       // Image Check: Priority Sanity -> Then Fallback
       let slideImage = fallback.image;
-      if (slide.image?.asset) {
+      if (slide.image) {
         try {
           slideImage = urlFor(slide.image).width(2000).quality(80).url();
         } catch (e) {
@@ -101,7 +102,7 @@ const Hero = ({ locale }: { locale: string }) => {
 
       return {
         image: slideImage,
-        // Priority check for each field
+        // Priority check for each field: Sanity fields -> Fallback fields
         subtitle: slide.slogan || slide.subtitle || fallback.subtitle,
         title: slide.title ? renderHighlight(slide.title) : fallback.title,
         text: slide.description || slide.text || fallback.text,

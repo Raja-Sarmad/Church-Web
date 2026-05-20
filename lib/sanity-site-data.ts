@@ -716,40 +716,33 @@ const withSlug = <T extends { slug?: unknown }>(item: T) => ({
 });
 
 export const urlFor = (source: any) => {
-  const resolved =
-    typeof source === "string"
-      ? source
-      : source?.asset?.url ?? source?.url ?? source?.src ?? source?.image ?? null;
+  let builder =
+    source && typeof source === "object" ? urlForImage(source) : null;
 
-  if (resolved) {
-    return {
-      width(_value?: number) {
-        return this;
-      },
-      quality(_value?: number) {
-        return this;
-      },
-      url() {
-        return resolved;
-      },
-    };
-  }
+  const result = {
+    width(w: number) {
+      if (builder) builder = builder.width(w);
+      return result;
+    },
+    quality(q: number) {
+      if (builder) builder = builder.quality(q);
+      return result;
+    },
+    url(): string {
+      if (typeof source === "string") return source;
+      if (!source) return "/hero-1.webp";
 
-  return {
-    width(_value?: number) {
-      return this;
-    },
-    quality(_value?: number) {
-      return this;
-    },
-    url() {
       try {
-        return urlForImage(source).url();
-      } catch {
+        // Handle cases where the asset might be expanded in the query
+        if (source.asset?.url) return source.asset.url;
+        return builder?.url() || "/hero-1.webp";
+      } catch (e) {
+        console.error("urlFor error:", e);
         return "/hero-1.webp";
       }
     },
   };
+  return result;
 };
 
 export async function getSiteSettings(_locale = "en") {
