@@ -58,14 +58,14 @@ const blogPosts = [
 
 const donationPosts = [
   {
-    slug: "sanctuary-renovation-fund",
+    slug: "Church Hall Construction",
     category: "Church Building",
-    title: "Sanctuary Renovation Fund",
+    title: "Church Hall Construction",
     description:
-      "Expanding and refreshing our worship space so more families can gather, pray, and grow together.",
+      "Building a larger worship space where families and communities can gather in faith, prayer, and fellowship.",
     image: "/hero1.jpg",
-    raisedAmount: 18500,
-    goalAmount: 30000,
+    raisedAmount: 19500,
+    goalAmount: 67400,
     accentColor: "#F94B1C",
     defaultAmount: 100,
     amountOptions: [50, 100, 250, 500],
@@ -81,14 +81,14 @@ const donationPosts = [
     richContent: [],
   },
   {
-    slug: "winter-outreach-drive",
+    slug: "Seminary for Students",
     category: "Community Relief",
-    title: "Winter Outreach Drive",
+    title: "Seminary for Students",
     description:
-      "Providing warm meals, blankets, and emergency support for families facing the cold season.",
+      "Supporting Biblical education through Harvest Bible School to train future pastors, leaders, and disciples of Christ.",
     image: "/hero2.jpg",
     raisedAmount: 9200,
-    goalAmount: 15000,
+    goalAmount: 45000,
     accentColor: "#F0A202",
     defaultAmount: 50,
     amountOptions: [25, 50, 100, 200],
@@ -104,14 +104,83 @@ const donationPosts = [
     richContent: [],
   },
   {
-    slug: "youth-discipleship-scholarship",
+    slug: "Medical Training Rooms",
     category: "Education",
-    title: "Youth Discipleship Scholarship",
+    title: "Medical Training Rooms",
     description:
-      "Supporting faith formation, tutoring, and school expenses for children and teenagers from struggling homes.",
+      "Creating medical training facilities to equip students with practical healthcare skills and compassionate service.",
     image: "/hero3.jpg",
     raisedAmount: 12300,
-    goalAmount: 20000,
+    goalAmount: 60000,
+    accentColor: "#28A745",
+    defaultAmount: 75,
+    amountOptions: [25, 75, 150, 300],
+    detailParagraphs: [
+      "This fund supports educational opportunity alongside discipleship and mentoring.",
+      "It helps children and youth remain connected to both learning and spiritual formation.",
+    ],
+    categories: [
+      { label: "Scholarships", count: 5 },
+      { label: "Youth Ministry", count: 9 },
+    ],
+    galleryImages: ["/hero3.jpg", "/about-one-img-1.jpg", "/about-one-img-2.jpg"],
+    richContent: [],
+  },
+  {
+    slug: "School Rooms Development",
+    category: "Education",
+    title: "School Rooms Development",
+    description:
+      "Building classrooms to provide education, learning opportunities, and hope for children and youth.",
+    image: "/hero3.jpg",
+    raisedAmount: 12300,
+    goalAmount: 58700,
+    accentColor: "#28A745",
+    defaultAmount: 75,
+    amountOptions: [25, 75, 150, 300],
+    detailParagraphs: [
+      "This fund supports educational opportunity alongside discipleship and mentoring.",
+      "It helps children and youth remain connected to both learning and spiritual formation.",
+    ],
+    categories: [
+      { label: "Scholarships", count: 5 },
+      { label: "Youth Ministry", count: 9 },
+    ],
+    galleryImages: ["/hero3.jpg", "/about-one-img-1.jpg", "/about-one-img-2.jpg"],
+    richContent: [],
+  },
+  {
+    slug: "IT Training Center",
+    category: "Education",
+    title: "IT Training Center",
+    description:
+      "Establishing IT training programs to equip young people with modern skills for better careers and financial stability.",
+    image: "/hero3.jpg",
+    raisedAmount: 12300,
+    goalAmount: 59200,
+    accentColor: "#28A745",
+    defaultAmount: 75,
+    amountOptions: [25, 75, 150, 300],
+    detailParagraphs: [
+      "This fund supports educational opportunity alongside discipleship and mentoring.",
+      "It helps children and youth remain connected to both learning and spiritual formation.",
+    ],
+    categories: [
+      { label: "Scholarships", count: 5 },
+      { label: "Youth Ministry", count: 9 },
+    ],
+    galleryImages: ["/hero3.jpg", "/about-one-img-1.jpg", "/about-one-img-2.jpg"],
+    richContent: [],
+  },
+  {
+    slug: "Water Tank & Baptism Pool Project",
+    category: "Education",
+    title: "Water Tank & Baptism Pool Project",
+    description:
+      "Building a water tank and baptism pool to support community needs and provide a sacred place for believers to publicly declare their faith in Christ.",
+    image: "/hero3.jpg",
+    raisedAmount: 12300,
+    goalAmount: 21300,
     accentColor: "#28A745",
     defaultAmount: 75,
     amountOptions: [25, 75, 150, 300],
@@ -239,27 +308,37 @@ const homeFallback = {
     vision: {
       title: "Vision",
       text: "To become a healthy church community that reflects Christ in worship, discipleship, and service.",
+      
     },
     mission: {
       title: "Mission",
-      text: "We equip believers, care for families, and respond to practical needs with prayerful consistency.",
+      text: "To equip believers through Harvest Bible School and serve communities through faith, education, and compassion.",
+      items: [
+        "Biblical teaching and discipleship",
+        "Training for a better future", 
+        "Caring for families and the elderly",
+        "Sharing the love of Christ",
+      ],
     },
     objectives: {
       title: "Our",
       highlight: "Objectives",
       items: [
-        "Strengthen worship, prayer, and biblical discipleship.",
-        "Serve vulnerable people through practical support.",
-        "Build durable ministry pathways for children, youth, and families.",
+        "Biblical teaching and discipleship",
+        "IT and Medical Training", 
+        "Care for families and the elderly",
+        "Sharing the love of Christ",
       ],
       donateNow: "Donate now",
     },
     targetGroups: {
       title: "Who We Serve",
       items: [
-        "Families facing hardship",
-        "Children and youth needing support",
-        "Individuals seeking prayer, counseling, and restoration",
+        "Families in need",
+        "Children and youth",
+        "Students and trainees",
+        "Elderly people needing care",
+        "Communities seeking faith and hope",
       ],
     },
     missionBackgroundImage: "/hero-1.webp",
@@ -269,8 +348,8 @@ const homeFallback = {
   volunteerCtaSection: {
     items: [
       {
-        title: "Volunteer With Us",
-        description: "Use your time and gifts in ways that strengthen people and ministry.",
+        title: "Serve with Faith and Compassion",
+        description: "At Harvest Bible School, we believe serving God means serving people with love, humility, and compassion. Join us in building a Christ-centered community through worship, education, outreach, and care.",
         buttonLabel: "Join the team",
         href: "/volunteer",
         image: "/about-one-img-1.jpg",

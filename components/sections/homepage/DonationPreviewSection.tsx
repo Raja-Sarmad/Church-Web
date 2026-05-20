@@ -54,17 +54,7 @@ const DonationPreviewSection = ({ locale }: { locale: string }) => {
                 goalLabel="Goal"
                 formatAmount={(val) => `$${val}`}
               />
-              <DonationCard
-                image={item.image}
-                title={item.title}
-                description={item.description}
-                raised={item.raisedAmount}
-                goal={item.goalAmount}
-                percentage={Math.round((item.raisedAmount / item.goalAmount) * 100)}
-                donateLabel="Donate Now"
-                goalLabel="Goal"
-                formatAmount={(val) => `$${val}`}
-              />
+              
             </Link>
           ))}
         </div>
