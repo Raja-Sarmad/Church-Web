@@ -3,7 +3,7 @@ import { createClient } from "next-sanity";
 import { isSanityConfigured, sanityEnv } from "@/sanity/env";
 
 export const sanityClient = createClient({
-  projectId: sanityEnv.projectId || "demo-project",
+  projectId: sanityEnv.projectId || "dmdxfs7h",
   dataset: sanityEnv.dataset || "production",
   apiVersion: sanityEnv.apiVersion,
   useCdn: false,
