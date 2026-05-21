@@ -43,7 +43,7 @@ const AboutSection = ({ locale }: { locale: string }) => {
         : "/picture-1.jpeg",
       imageSecondaryUrl: data?.imageSecondary
         ? urlFor(data.imageSecondary).width(800).quality(80).url()
-        : "/picture-2.jpeg",
+        : "/hero2.jpeg",
     }),
     [data, t],
   );

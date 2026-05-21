@@ -118,7 +118,7 @@ const donationPosts = [
       { label: "Food Relief", count: 6 },
       { label: "Family Care", count: 7 },
     ],
-    galleryImages: ["/hero2.jpg", "/picture-1.jpeg", "/picture-2.jpeg"],
+    galleryImages: ["/hero2.jpg", "/picture-1.jpeg", "/hero2.jpeg"],
   },
   {
     slug: "youth-discipleship-scholarship",
@@ -168,7 +168,7 @@ const projects = [
       description:
         "Access to safe water improves health outcomes, school attendance, and family stability.",
     },
-    gallery: ["/about-one-img-1.jpg", "/picture-1.jpeg", "/picture-2.jpeg"],
+    gallery: ["/about-one-img-1.jpg", "/picture-1.jpeg", "/hero2.jpeg"],
   },
   {
     _id: "project-family-care",
@@ -233,7 +233,7 @@ const galleryItems = [
     title: "Community Outreach Day",
     slug: "community-outreach-day",
     heroImage: "/about-one-img-1.jpg",
-    images: ["/about-one-img-1.jpg", "/picture-1.jpeg", "/picture-2.jpeg"],
+    images: ["/about-one-img-1.jpg", "/picture-1.jpeg", "/hero2.jpeg"],
   },
   {
     title: "Youth Fellowship Evening",

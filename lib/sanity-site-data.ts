@@ -100,7 +100,7 @@ const donationPosts = [
       { label: "Food Relief", count: 6 },
       { label: "Family Care", count: 7 },
     ],
-    galleryImages: ["/hero2.jpg", "/picture-1.jpeg", "/picture-2.jpeg"],
+    galleryImages: ["/hero2.jpg", "/picture-1.jpeg", "/hero2.jpeg"],
     richContent: [],
   },
   {
@@ -221,7 +221,7 @@ const projects = [
       description:
         "Access to safe water improves health outcomes, school attendance, and family stability.",
     },
-    gallery: ["/about-one-img-1.jpg", "/picture-1.jpeg", "/picture-2.jpeg"],
+    gallery: ["/about-one-img-1.jpg", "/picture-1.jpeg", "/hero.jpeg"],
   },
   {
     _id: "project-family-care",
@@ -263,7 +263,7 @@ const galleryItems = [
     slug: "community-outreach-day",
     description: "Serving families through practical relief and prayer.",
     heroImage: "/about-one-img-1.jpg",
-    images: ["/about-one-img-1.jpg", "/picture-1.jpeg", "/picture-2.jpeg"],
+    images: ["/about-one-img-1.jpg", "/picture-1.jpeg", "/hero2.jpeg"],
   },
 ];
 
@@ -302,7 +302,7 @@ const homeFallback = {
     imageAltPrimary: "Church ministry in action",
     imageAltSecondary: "Community service moment",
     imagePrimary: "/picture-1.jpeg",
-    imageSecondary: "/picture-2.jpeg",
+    imageSecondary: "/hero2.jpeg",
   },
   missionVisionSection: {
     vision: {
@@ -492,7 +492,7 @@ const siteSettingsFallback = {
   logo: "/logo3.jpeg",
   donationButtonLabel: "Donate Now",
   pageHero: {
-    backgroundImage: "/hero-1.webp",
+    backgroundImage: "/hero-5.png",
     overlayImage: "/hero-bottom-right.webp",
     maskImage: "/download.png",
   },
@@ -502,9 +502,9 @@ const siteSettingsFallback = {
     address: "123 Mercy Street, Community City",
     phone: "+1 800 555 3248",
     socialLinks: [
-      { platform: "x", label: "X", href: "https://x.com/umutkopruleri" },
+      
       { platform: "facebook", label: "Facebook", href: "https://www.facebook.com/UmutKopruleri/" },
-      { platform: "instagram", label: "Instagram", href: "https://www.instagram.com/umutkopruleri/" },
+      
       { platform: "youtube", label: "YouTube", href: "https://www.youtube.com/@UmutKopruleri" },
     ],
   },
