@@ -132,7 +132,7 @@ const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
           className="flex rounded-full items-center gap-2 group cursor-pointer"
         >
           <Image
-            src={settings?.logo ? urlFor(settings.logo).width(180).quality(90).url() : "/logo4.jpeg"}
+            src={settings?.logo ? urlFor(settings.logo).width(180).quality(90).url() : "/logo3.jpeg"}
             alt="logo"
             width={90}
             height={90}

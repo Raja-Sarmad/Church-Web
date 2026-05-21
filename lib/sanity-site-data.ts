@@ -510,7 +510,7 @@ const siteSettingsFallback = {
   },
   footer: {
     aboutText:
-      "Bridges of Faith Community Church exists to worship Christ, disciple believers, and serve people in practical love.",
+      "Building Futures Through Biblical and Professional Education",
     quickLinksTitle: "Quick Links",
     contactTitle: "Contact Us",
     rights: "Copyright 2026 Bridges of Faith Community Church. All rights reserved.",
@@ -611,7 +611,6 @@ const volunteerPageFallback = {
     "Prayer response and pastoral care assistance",
     "Media, events, and hospitality coordination",
   ],
-  
   joinTeamTitle: "Become Part of the Team",
   joinTeamDescription:
     "Start by reaching out through our contact page. We will follow up with next steps and current areas of need.",
