@@ -33,7 +33,7 @@ const Navbar = ({ isSticky = false }: { isSticky?: boolean }) => {
     () => [
       { hash: "home", label: t("home") },
       { hash: "programs", label: t("areaOfWork") },
-      { href: "/campaigns", label: t("contributeProjects") },
+      { href: "/projects", label: t("contributeProjects") },
       { href: "/blog", label: t("storiesImpact") },
       { hash: "about", label: t("about") },
       { href: "/contact", label: t("contact") },
