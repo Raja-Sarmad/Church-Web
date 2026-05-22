@@ -40,29 +40,17 @@ const Footer = () => {
   const fallbackSocialLinks = [
     {
       href: isArabic
-        ? "https://www.facebook.com/UmutKopruleriAr/"
-        : "https://www.facebook.com/UmutKopruleri/",
+        ? "https://www.facebook.com/share/17Ujyz5Sxz/"
+        : "https://www.facebook.com/share/17Ujyz5Sxz/",
       label: "Facebook",
       icon: Facebook,
     },
+    
+    
     {
       href: isArabic
-        ? "https://www.instagram.com/umutkopruleriar/"
-        : "https://www.instagram.com/umutkopruleri/",
-      label: "Instagram",
-      icon: Instagram,
-    },
-    {
-      href: isArabic
-        ? "https://x.com/UmutKopruleriAr"
-        : "https://x.com/umutkopruleri",
-      label: "X (@umutkopruleri)",
-      icon: TwitterIcon,
-    },
-    {
-      href: isArabic
-        ? "https://www.youtube.com/@UmutKopruleriAr"
-        : "https://www.youtube.com/@UmutKopruleri",
+        ? "https://youtube.com/@harvestbiblecollegepk3141?si=iNoUGG2xmrDTWIDK"
+        : "https://youtube.com/@harvestbiblecollegepk3141?si=iNoUGG2xmrDTWIDK",
       label: "YouTube",
       icon: Youtube,
     },
@@ -207,8 +195,7 @@ const Footer = () => {
                   link.icon ??
                   link.platform === "facebook"
                     ? Facebook
-                    : link.platform === "instagram"
-                      ? Instagram
+                    
                       : link.platform === "youtube"
                         ? Youtube
                         : TwitterIcon;
@@ -237,7 +224,7 @@ const Footer = () => {
             {footer?.rights ?? tFooter("rights")}
           </p>
           <span className="text-[11px] font-black uppercase tracking-[0.15em] text-white/50">
-            @umutkopruleri
+            
           </span>
         </div>
       </div>

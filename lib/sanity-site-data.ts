@@ -252,18 +252,18 @@ const projects = [
 
 const galleryItems = [
   {
-    title: "Sunday Worship Gathering",
+    title: "Gallery",
     slug: "sunday-worship-gathering",
     description: "Moments from worship, music, prayer, and fellowship.",
-    heroImage: "/hero-1.webp",
-    images: ["/hero-1.webp", "/hero1.jpg", "/hero-bottom-left.png"],
+    heroImage: "/img3.jpeg",
+    images: ["/img1.jpeg", "/img2.jpeg", "/img3.jpeg", "/img4.png", "/img5.png", "/img6.png", "/img7.png"],
   },
   {
-    title: "Community Outreach Day",
+    title: "Community Gallery",
     slug: "community-outreach-day",
     description: "Serving families through practical relief and prayer.",
-    heroImage: "/about-one-img-1.jpg",
-    images: ["/about-one-img-1.jpg", "/picture-1.jpeg", "/hero2.jpeg"],
+    heroImage: "/img2.jpeg",
+    images: ["/img7.png", "/img5.png", "/img2.jpeg", "/img6.png", "/img1.jpeg"],
   },
 ];
 
