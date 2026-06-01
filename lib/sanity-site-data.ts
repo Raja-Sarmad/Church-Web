@@ -246,7 +246,7 @@ const projects = [
       description:
         "Stable families strengthen the whole church community and create room for healing and resilience.",
     },
-    gallery: ["/about-one-img-2.jpg", "/hero-4.webp", "/hero-bottom-right.webp"],
+    gallery: ["/about-one-img-2.jpg", "/hero-4.webp", "/hero-bottom-right.png"],
   },
 ];
 
@@ -493,7 +493,7 @@ const siteSettingsFallback = {
   donationButtonLabel: "Donate Now",
   pageHero: {
     backgroundImage: "/hero-5.png",
-    overlayImage: "/hero-bottom-right.webp",
+    overlayImage: "/hero-bottom-right.png",
     maskImage: "/download.png",
   },
   topBar: {

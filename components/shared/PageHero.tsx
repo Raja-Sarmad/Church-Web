@@ -20,7 +20,7 @@ const PageHero = async ({
     : "/hero-1.webp";
   const overlayImage = settings.pageHero?.overlayImage
     ? urlFor(settings.pageHero.overlayImage).width(1200).quality(90).url()
-    : "/hero-bottom-right.webp";
+    : "/hero-bottom-right.png";
   const maskImage = settings.pageHero?.maskImage
     ? urlFor(settings.pageHero.maskImage).width(1200).quality(90).url()
     : "/download.png";

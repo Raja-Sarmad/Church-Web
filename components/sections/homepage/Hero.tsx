@@ -158,7 +158,7 @@ const Hero = ({ locale }: { locale: string }) => {
               className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
               style={{ backgroundImage: `url('${slides[activeIndex].image}')`, opacity: 0.4 }}
             />
-            <div className="absolute inset-0 bg-cover bg-no-repeat bg-center opacity-5" style={{ backgroundImage: "url('/hero-bottom-right.webp')" }} />
+            <div className="absolute inset-0 bg-cover bg-no-repeat bg-center opacity-5" style={{ backgroundImage: "url('/hero-bottom-right.png')" }} />
           </div>
 
           <div className="relative z-20 container mx-auto px-4 max-w-7xl text-center flex min-h-screen flex-col items-center justify-center py-24">
