@@ -520,10 +520,10 @@ const siteSettingsFallback = {
     newsletterPlaceholder: "Email address",
     newsletterButtonLabel: "Subscribe",
     socialLinks: [
-      { platform: "facebook", label: "Facebook", href: "https://www.facebook.com/UmutKopruleri/" },
-      { platform: "instagram", label: "Instagram", href: "https://www.instagram.com/umutkopruleri/" },
-      { platform: "x", label: "X (@umutkopruleri)", href: "https://x.com/umutkopruleri" },
-      { platform: "youtube", label: "YouTube", href: "https://www.youtube.com/@UmutKopruleri" },
+      { platform: "facebook", label: "Facebook", href: "https://www.facebook.com/share/17Ujyz5Sxz/" },
+      // { platform: "instagram", label: "Instagram", href: "https://www.instagram.com/umutkopruleri/" },
+      // { platform: "x", label: "X (@umutkopruleri)", href: "https://x.com/umutkopruleri" },
+      { platform: "youtube", label: "YouTube", href: "https://youtube.com/@harvestbiblecollegepk3141?si=iNoUGG2xmrDTWIDK" },
     ],
   },
 };
